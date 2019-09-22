@@ -1,0 +1,30 @@
+
+.msg{
+    float: right;
+    width: 57%;
+    margin: 0% 20%;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+.card{
+    text-align: left;
+    background-color: white;
+    margin: 5px;
+    left: 20px;
+}
+.audio{
+    text-align: left;
+}
+.label{
+    text-align: right;
+}
+.date{
+    text-align: center;
+}
+.date p{
+    background-color: rgba(225,245,254,.92);
+    width: 6%;
+    border: 5px;
+    border-radius: 5px;
+    margin: 10px 47%;
+}

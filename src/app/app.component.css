@@ -1,0 +1,10 @@
+
+app-show-lesson{
+    margin:0% 20%;/*TODO: v2.0*/
+    background-color:#e5ddd5;
+    float: left;
+    /*left: 20px;*/
+    width: 58%;
+    border: 5px solid white;
+    border-radius: 25px;
+}

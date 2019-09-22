@@ -1,0 +1,17 @@
+<div class="date">
+    <p>היום</p>
+</div>
+<div class="msg">
+    <div *ngFor="let lesson1 of lessonType" class="card">
+        <div class="{{lesson1}}">
+            <div class="label">
+                <label>{{lesson1}}</label><br>
+            </div>
+            <div class="audio">
+                <audio  controls name="media">
+                    <source src={{AllLessons[lesson1]}} type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
