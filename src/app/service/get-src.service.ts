@@ -11,7 +11,7 @@ export class CallToServerService {
   constructor(private http: HttpClient) { }
 
   public getTodayLessons():Observable<any> {
-    const url = '';
+    const url = '.com/yy/yyGetToday.php?day=';
     
     //return this.http.get(url).pipe(map((obj)=>{ 
     return this.ajax().pipe(map((obj)=>{ 
@@ -35,17 +35,24 @@ export class CallToServerService {
    )
   }
 
-  private bigthing=
+  private bigthing =
+  [
   {
-    tania: "http://goo.gl/1UESua",
-    hayomyom: "http://goo.gl/UQDf9J",
-    chumash:"http://goo.gl/EYRCf6",
-    thilim:"http://goo.gl/mvmNHz",
-    rambam1: "http://bit.ly/2klVYGo",
-    rambam3:"" 
-  }
+      "title": "פרשת האזינו - יום שני",
+      "mydesc":"שאל אביך - באיזה אבא מדובר?",
+      "audio":"http://goo.gl/sUQdiZ",
+      "date":"2019-01-01"
+  },
+  {
+      title: "תניא שנה מעוברת אגרת הקודש סימן י - א אלול   ",
+      mydesc:"אור עליון זה מאיר ומתפשט תוך העולמות ומתקן כל מעוות",
+      audio:"http://goo.gl/NqwAWi",
+      "date":"2019-01-01"
+  }];
   /*
+  [{"id":"1","name":"name","Email":"Email@email.com","Choice":"Mehir"},{"id":"2","name":"name1","Email":"Email@email.com1","Choice":"Mehir1"}];
   getAllCountry():Observable<any>{
     return this.ajax();
   }*/
+
 }

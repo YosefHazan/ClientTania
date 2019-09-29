@@ -17,12 +17,12 @@ export class ShowLessonComponent implements OnInit {
   ngOnInit() {
     console.log("ngOnInit comp - show-lesson");
       this.yosef = this.ReqSer.getTodayLessons().subscribe(data=>{
-      this.AllLessons = data
+      this.AllLessons = data;
 
-      this.lessonType = Object.keys(this.AllLessons);
+      /*this.lessonType = Object.keys(this.AllLessons);
       this.LessonUrl = Object.values(this.AllLessons);
       console.log(this.lessonType + " this.lessonType" );
-      console.log(this.LessonUrl + " this.LessonUrl yosef" );
+      console.log(this.LessonUrl + " this.LessonUrl yosef" );*/
       })
   }
 

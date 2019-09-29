@@ -2,16 +2,20 @@
     <p>היום</p>
 </div>
 <div class="msg">
-    <div *ngFor="let lesson1 of lessonType" class="card">
-        <div class="{{lesson1}}">
+    <div *ngFor="let lesson1 of AllLessons" class="card">
+        <div class='lesson' >
             <div class="label">
-                <label>{{lesson1}}</label><br>
+                <label><h3>{{lesson1['title']}}</h3></label>
+            </div>
+            <div class="content">
+                <p>{{lesson1['mydesc']}}</p><br>
             </div>
             <div class="audio">
                 <audio  controls name="media">
-                    <source src={{AllLessons[lesson1]}} type="audio/mp3">
+                    <source src='{{lesson1["audio"]}}' type="audio/mp3">
                 </audio>
             </div>
+            <p style="display:none;">{{lesson1["date"]}}</p>
         </div>
     </div>
 </div>
