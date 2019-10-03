@@ -8,7 +8,7 @@ import {CallToServerService} from '../service/get-src.service';
   styleUrls: ['./show-lesson.component.css']
 })
 export class ShowLessonComponent implements OnInit {
-  public yosef:any;
+  public callObservable:any;
   public AllLessons:any;
   public LessonUrl:any[];
   public lessonType:any[];
@@ -16,9 +16,23 @@ export class ShowLessonComponent implements OnInit {
 
   ngOnInit() {
     console.log("ngOnInit comp - show-lesson");
-      this.yosef = this.ReqSer.getTodayLessons().subscribe(data=>{
+      this.callObservable = this.ReqSer.getTodayLessons().subscribe(data=>{
       this.AllLessons = data;
-
+      
+      this.AllLessons.forEach(elm => {
+        if(elm['sug'] == 't'){
+          elm['sug'] = "תניא";
+        }
+        else if(elm['sug'] == 'y'){
+          elm['sug'] = "יום יום";
+        }
+        else if(elm['sug'] == 'c'){
+          elm['sug'] = "חומש";
+        }
+        else if(elm['sug'] == 'p'){
+          elm['sug'] = "";
+        }
+      });
       /*this.lessonType = Object.keys(this.AllLessons);
       this.LessonUrl = Object.values(this.AllLessons);
       console.log(this.lessonType + " this.lessonType" );
@@ -27,7 +41,7 @@ export class ShowLessonComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    this.yosef.Runsubscribe();
+    this.callObservable.Runsubscribe();
   }
 
 }

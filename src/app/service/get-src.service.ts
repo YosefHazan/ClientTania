@@ -11,17 +11,12 @@ export class CallToServerService {
   constructor(private http: HttpClient) { }
 
   public getTodayLessons():Observable<any> {
-    const url = '.com/yy/yyGetToday.php?day=';
-    
-    //return this.http.get(url).pipe(map((obj)=>{ 
-    return this.ajax().pipe(map((obj)=>{ 
-      console.log('mapping start');
-      /*for (let k in obj){
-        if (k.toLowerCase().startsWith(name) || obj[k].toLowerCase().startsWith(name) ){
-          res[k]=obj[k]
-        }
-      }*/
-  
+    const url = '//tanyayomi.com/yy/yyGetToday.php?day=2019-10-03';
+
+    return this.http.get(url).pipe(map((obj)=>{ 
+    //return this.ajax().pipe(map((obj)=>{ 
+      console.log('mapping start : ' + obj[3]['sug']);
+      
       console.log('mapping end with : ' + obj);
 
       return obj;
