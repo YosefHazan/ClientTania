@@ -8,3 +8,16 @@ app-show-lesson{
     border: 5px solid white;
     border-radius: 25px;
 }
+@media only screen and (max-width: 600px) 
+{
+    app-show-lesson{
+        margin:0% 1%;/*TODO: v2.0*/
+        background-color:#e5ddd5;
+        float: left;
+        /*left: 20px;*/
+        /*min-width: 300px;*/
+        border: 5px solid white;
+        border-radius: 25px;
+        width:401px;
+    }
+}

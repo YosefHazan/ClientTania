@@ -15,6 +15,9 @@ export class ShowLessonComponent implements OnInit {
   constructor(private ReqSer:CallToServerService ) { }
 
   ngOnInit() {
+
+        document.getElementById('showDate').innerHTML=(new HeDate).toString();
+
     console.log("ngOnInit comp - show-lesson");
       this.callObservable = this.ReqSer.getTodayLessons().subscribe(data=>{
       this.AllLessons = data;

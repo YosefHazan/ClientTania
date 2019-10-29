@@ -23,8 +23,18 @@
 }
 .date p{
     background-color: rgba(225,245,254,.92);
-    width: 6%;
+    width: 40%;
     border: 5px;
     border-radius: 5px;
-    margin: 10px 47%;
+    margin: 10px 30%;
+}
+@media only screen and (max-width: 600px) 
+{
+    .msg {
+        float: right;
+        width: 94%;
+        margin: 0% 2%;
+        border: 5px solid white;
+        border-radius: 5px;
+    }
 }
