@@ -10,12 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowLessonComponent } from './show-lesson/show-lesson.component';
 import { ControlpanelComponent } from './controlpanel/controlpanel.component';
+import { MidrashaComponent } from './midrasha/midrasha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowLessonComponent,
-    ControlpanelComponent
+    ControlpanelComponent,
+    MidrashaComponent
   ],
   imports: [
     FormsModule,

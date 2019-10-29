@@ -1,0 +1,23 @@
+<p>midrasha works!</p>
+<!-- panel search -->
+<label for="autocomplate">חיפוש שיעור</label>
+<input id="autocomplate" type="text" (keyup)="onKey($event)">
+
+<div id="theList">
+    <h2>הבחירה שלך</h2>
+  
+    <p>
+      {{name}} : {{country}}
+    </p>
+
+    <br>
+    <h2>הרשימה המלאה</h2>
+    <ul>
+      <li *ngFor="let k of allCountryKeys">
+        {{k}} - {{  allCountry[k]}}
+        </li>
+    </ul>
+  
+
+    <a>מעבר לשיעורי החת"ת</a>
+  </div>
