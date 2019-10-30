@@ -18,21 +18,20 @@ export class CallToMidrasha {
 
   getLessonsSpecific(name:string):Observable<string> {
     
-
+    let res;
     //return this.http.get(url).pipe(map((obj)=>{ 
-    return this.saveAllLessons.pipe(map((obj)=>{ 
+    return this.saveAllLessons.pipe(map((obj:any)=>{ 
       console.log('mapping start');
       name = name.toUpperCase();
-      /*for (let k in obj){
-        if (k.toLowerCase().startsWith(name) || obj[k].toLowerCase().startsWith(name) ){
-          res[k]=obj[k]
-          
+      for (let k in obj){
+        console.log(k['title'] + 'k[title]');
+        if (k['title'].toUpperCase().startsWith(name))
+        {
+           res=k['title'];
+           console.log('mapping end with : ' + res);
         }
-      }*/
-  
-      console.log('mapping end with : ' + obj[name]);
-
-      return obj[name];
+      }
+      return res;
     }));
   };
 
