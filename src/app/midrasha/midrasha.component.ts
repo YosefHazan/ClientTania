@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CallToMidrasha} from '../service/call-to-midrasha.service';
 import{lessonsClass} from '../classes/lessonsClass';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-midrasha',
@@ -17,7 +18,7 @@ export class MidrashaComponent implements OnInit {
   public nameToReq:any;
   public Lessons:any;
 
-  constructor(private lessonsService: CallToMidrasha){}
+  constructor(private lessonsService: CallToMidrasha,  private router:Router){}
   ngOnInit()
   {
     this.callObservable = this.lessonsService.getAllLessons().subscribe(data=>{

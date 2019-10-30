@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild , ElementRef } from '@angular/core';
 import {CallToServerService} from '../service/get-src.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ShowLessonComponent implements OnInit {
   public AllLessons:any;
   public LessonUrl:any[];
   public lessonType:any[];
-  constructor(private ReqSer:CallToServerService ) { }
+  constructor(private ReqSer:CallToServerService, private router:Router ) { }
 
   ngOnInit() {
 
@@ -41,6 +42,11 @@ export class ShowLessonComponent implements OnInit {
       console.log(this.lessonType + " this.lessonType" );
       console.log(this.LessonUrl + " this.LessonUrl yosef" );*/
       })
+  }
+
+  goToMidrshae()
+  {
+    this.router.navigateByUrl('midrasha');
   }
 
   ngOnDestroy(){
