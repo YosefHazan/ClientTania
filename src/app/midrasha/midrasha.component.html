@@ -1,14 +1,15 @@
-<p>midrasha works!</p>
+<a href="/chitat">מעבר לשיעורי החת"ת</a>
+<br><br>
 <!-- panel search -->
-<label for="autocomplate">חיפוש שיעור</label>
 <input id="autocomplate" type="text" (keyup)="onKey($event)">
+<label for="autocomplate">:חיפוש שיעור</label>
 
   <div id="theList">
     <h2>הבחירה שלך</h2>
     <p>
       {{nameToReq}} : {{Lessons}}
     </p>
-
+    
     <br>
     <h2>הרשימה המלאה</h2>
     <div>
@@ -16,6 +17,4 @@
         {{index}} <a href="{{item['link']}}" target="_blank"> {{item['title']}}</a><br>
       </div>
     </div>
-  
-    <a>מעבר לשיעורי החת"ת</a>
   </div>
