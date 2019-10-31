@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CallToMidrasha} from '../service/call-to-midrasha.service';
 import{lessonsClass} from '../classes/lessonsClass';
+import{lessonsClass1} from '../classes/lessonsClass1';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,62 +17,51 @@ export class MidrashaComponent implements OnInit {
   public LessonName:Array<object> = [];
   public AllLessonsJson:lessonsClass;
   public nameToReq:any;
-  public Lessons:any;
-
+  public Lessons:lessonsClass;
+  private result:lessonsClass;
+  public resultLessonName1:string[];
+  public resultLessonUrl1:string[];
   constructor(private lessonsService: CallToMidrasha,  private router:Router){}
   ngOnInit()
   {
-    this.callObservable = this.lessonsService.getAllLessons().subscribe(data=>{
+      this.callObservable = this.lessonsService.getAllLessons().subscribe(data=>{
       this.AllLessons = data;
-      for (let index = 0; index < this.AllLessons.length; index++) {
-        this.LessonName.push(this.AllLessons[index]['title']);
-        this.LessonUrl.push(this.AllLessons[index]['link']);
-      }
-      this.AllLessonsJson.LessonName1.concat(this.LessonName);
-      this.AllLessonsJson.LessonUrl1.concat(this.LessonUrl);
-      console.log(this.AllLessonsJson.LessonName1 + "AllLessonsJson" );
-      /*this.AllLessons.forEach(Obj => {
-        //console.log(Obj['title'] + " - Obj['title']");
-        this.LessonName.push(Obj['title']);
-        this.LessonUrl.push(Obj['link']);
-        console.log(this.LessonName + " - this.LessonName");
-      });*/
+      console.log("1");//this.AllLessons.LessonName1['title']
+      this.AllLessons.forEach(element => {
+      this.LessonName.push(element['title']);
+      this.LessonUrl.push(element['link']);
     });
-    /*this.lessonType = Object.keys(this.AllLessons);
-      this.LessonUrl = Object.values(this.AllLessons);
-      console.log(this.lessonType + " this.lessonType" );
-      console.log(this.LessonUrl + " this.LessonUrl yosef" );
-    */ 
+    this.AllLessonsJson.LessonName1.push(this.LessonName);
+    this.AllLessonsJson.LessonUrl1.push(this.LessonUrl);
+    //console.log(this.AllLessonsJson.LessonName1 + "AllLessonsJson" );
+    });
   }
-
+  /*
   onKey(event: any){
-    this.nameToReq = event.target.value.toUpperCase();
-    this.getLessons(this.nameToReq);
+    this.nameToReq = event.target.value;
+    this.Lessons = this.getLessons(this.nameToReq);
   }
 
-  getLessons(nameToSearch:string){
-    console.log(nameToSearch + " name To Search ")
-    this.lessonsService.getLessonsSpecific(nameToSearch)
-      .subscribe(
-        (response: string) => {
-           console.log(response);
-           this.Lessons = response;
-       },
-       (error) => console.log(error)
-    );
+  getLessons(name1:string):lessonsClass1{
+    let isHaveResult = false;
+    console.log(name1 + " name1 " + this.AllLessons[1]);
+    //console.log(this.AllLessons);
+    //console.log(this.AllLessons[1]['title']);
+
+    this.AllLessons.forEach(element => {
+      console.log(element['title'] + " " + name1 + " + " + element['title'].startsWith(name1));
+      if(element['title'].startsWith(name1)){
+        isHaveResult = true;
+        this.resultLessonName1.push(element['title']);
+        this.resultLessonUrl1.push(element['link']);
+      }
+    });
+      return isHaveResult ? this.result : null ;  
+ 
   }
-
-  /*function that created new audio tag in this position
-  CreateAudioTag(currentElm, link){
-    const str = "<audio  controls name='media'>" +
-    "<source src={{lesson1['audio']}} type='audio/mp3'>" +
-"</audio>";
-    const chatchElm = currentElm.target.innerHTML(str);
-    
-  }*/
-
+  */
   ngOnDestroy(){
-    this.callObservable.Runsubscribe();
+    this.callObservable.unsubscribe();
   }
 
 }

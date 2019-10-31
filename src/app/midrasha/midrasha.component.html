@@ -1,17 +1,23 @@
 <a href="/chitat">מעבר לשיעורי החת"ת</a>
 <br><br>
-<!-- panel search -->
-<input id="autocomplate" type="text" (keyup)="onKey($event)">
-<label for="autocomplate">:חיפוש שיעור</label>
+  <!--div style="display: none;">
+    panel search >
+    <input id="autocomplate" type="text" (keyup)="onKey($event)">
+    <label for="autocomplate">:חיפוש שיעור</label>
+
+  
+
+    <h2>תוצאות חיפוש</h2>
+    
+      {{nameToReq}} :
+      <div id="yylinkResult" *ngFor="let item1 of Lessons; let i = index">
+        {{index}} <a href="{{item1.LessonUrl1[index]}}" target="_blank"> {{item1.LessonName1[index]}}</a><br>
+      </div>
+  </div-->
 
   <div id="theList">
-    <h2>הבחירה שלך</h2>
-    <p>
-      {{nameToReq}} : {{Lessons}}
-    </p>
-    
     <br>
-    <h2>הרשימה המלאה</h2>
+    <h2>רשימת השיעורים המלאה</h2>
     <div>
       <div id="yyleft" *ngFor="let item of AllLessons; let i = index">
         {{index}} <a href="{{item['link']}}" target="_blank"> {{item['title']}}</a><br>
