@@ -1,0 +1,23 @@
+<!--a href="/chitat">מעבר לשיעורי החת"ת</a-->
+<!--a (click)="goToChitat()">למעבר לשיעורי החת"ת ליחצו כאן</a-->
+<br><br>
+  <div>
+    <!--panel search
+    <input id="autocomplate" type="text" (keyup)="onKey($event)">
+    <label for="autocomplate">:חיפוש שיעור</label>
+
+    <h2>תוצאות החיפוש</h2>
+    <div *ngIf="Lessons">
+      {{nameToReq}} :
+    </div>
+  </div> -->
+
+  <div id="theList">
+    <br>
+    <h2>רשימת השיעורים המלאה</h2>
+    <div>
+      <div id="yyleft" *ngFor="let item of AllLessons; let i = index">
+        {{i}} <a href="{{item['link']}}" target="_blank"> {{item['title']}}</a><br>
+      </div>
+    </div>
+  </div>
