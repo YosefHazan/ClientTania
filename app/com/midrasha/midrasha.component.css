@@ -1,0 +1,22 @@
+#theList{
+    text-align: right;
+}
+table{
+    margin: 0px 5px;
+    float: right;
+}
+.row-table{
+    width:400px;
+}
+.cell-table{
+    margin:5px;
+    right:0px;
+    width:20px;
+}
+.cell-table-big{
+    right:0px;
+    width:300px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

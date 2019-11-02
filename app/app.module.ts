@@ -10,18 +10,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MidrashaComponent } from './com/midrasha/midrasha.component';
 import { ShowLessonComponent } from './com/show-lesson/show-lesson.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyAccountComponent } from './com/my-account/my-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MidrashaComponent,
-    ShowLessonComponent
+    ShowLessonComponent,
+    MyAccountComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

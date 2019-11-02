@@ -1,12 +1,24 @@
 <div style="text-align:center">
-  <h1>
-    {{ titleToday }}
-  </h1>
-  <h3>מאת הרב נדב כהן</h3>
-  <app-show-lesson></app-show-lesson>
-  <h1>
-    {{ titleMidrasha }}
-  </h1>
-  <app-midrasha></app-midrasha>
+  <h3>שיעורים מאת הרב נדב כהן</h3>
+  <div id='menu-nav'>
+    <div (click)="switchTab('chitat')" id='chitat' class="tab">
+      <h1>
+        {{ titleToday }}
+      </h1>
+    </div>
+    <div (click)="switchTab('midrasha')" id='midrasha' class="tab">
+      <h1>
+        {{ titleMidrasha }}
+      </h1>
+    </div>
+    <div (click)="switchTab('myAccount')" id='profile' class="tab">
+      <h1 >
+        החשבון שלי
+      </h1>
+    </div>
+  </div>
+
+  <app-show-lesson *ngIf="'chitat' == UserSelectedTab"></app-show-lesson>
+  <app-midrasha *ngIf="'midrasha' == UserSelectedTab"></app-midrasha>
 </div>
 <!--router-outlet></router-outlet-->

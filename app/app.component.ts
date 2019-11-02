@@ -7,7 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  titleToday = 'שיעורי החת"ת';
-  titleMidrasha = "המדרשה הדיגיטלית"; 
+  titleToday:string = 'חת"ת יומי';
+  titleMidrasha:string = "מדרשה דיגיטלית"; 
+  UserSelectedTab:string;
   constructor(private router:Router){}
+
+  switchTab(selectedTab:string)
+  {
+    this.UserSelectedTab = selectedTab;
+  }
 }

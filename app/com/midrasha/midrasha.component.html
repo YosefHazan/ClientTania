@@ -15,9 +15,17 @@
   <div id="theList">
     <br>
     <h2>רשימת השיעורים המלאה</h2>
-    <div>
-      <div id="yyleft" *ngFor="let item of AllLessons; let i = index">
-        {{i}} <a href="{{item['link']}}" target="_blank"> {{item['title']}}</a><br>
-      </div>
-    </div>
+    <table>
+      <tr>
+        <th class="cell-table type">תגית</th>
+        <th class="cell-table-big">שם השיעור</th>
+        <th class="cell-table index"> </th>
+      </tr>
+      <tr class="row-table yyAllLessons" *ngFor="let item of AllLessons; let i = index">
+        <td class="cell-table type">{{item['sug']}}</td>
+        <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
+        <td class="cell-table index"> {{i+1}} </td>
+        
+      </tr>
+    </table>
   </div>
