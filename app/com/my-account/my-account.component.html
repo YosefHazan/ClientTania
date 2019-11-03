@@ -1,1 +1,37 @@
-<p>my-account works!</p>
+<br><br><br><br>
+<div>
+    <button (click)="yyIsWantCookies()">{{btnText}}</button>
+    'שמירת נתונים מאתר זה על גבי 'זיכרון עוגיות
+</div>
+<div *ngIf="btnText == 'ביטול שמירה'" id="theList">
+    <br>
+    <h2>רשימת שיעורי חת"ת שנשמרו</h2>
+    <table>
+        <tr>
+            <th class="cell-table type">תגית</th>
+            <th class="cell-table-big">שם השיעור</th>
+            <th class="cell-table index"> </th>
+        </tr>
+        <tr class="row-table yyAllLessons" *ngFor="let item of AllChitatLessons; let i = index">
+            <td class="cell-table index"> <button (click)="yyRemuveChitat(this)">מחק</button> </td>
+            <td class="cell-table type">{{item['sug']}}</td>
+            <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
+            <td class="cell-table index"> {{i+1}} </td>
+        </tr>
+    </table>
+    <br>
+    <h2>רשימת שיעורים שנשמרו מהמדרשה</h2>
+    <table>
+        <tr>
+            <th class="cell-table type">תגית</th>
+            <th class="cell-table-big">שם השיעור</th>
+            <th class="cell-table index"> </th>
+        </tr>
+        <tr class="row-table yyAllLessons" *ngFor="let item of AllMidrashaLessons; let i = index">
+            <td class="cell-table index"> <button (click)="yyRemuveMidrasha(this)">מחק</button> </td>
+            <td class="cell-table type">{{item['sug']}}</td>
+            <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
+            <td class="cell-table index"> {{i+1}} </td>
+        </tr>
+    </table>
+</div>

@@ -11,7 +11,7 @@
         {{ titleMidrasha }}
       </h1>
     </div>
-    <div (click)="switchTab('myAccount')" id='profile' class="tab">
+    <div (click)="switchTab('my-account')" id='profile' class="tab">
       <h1 >
         החשבון שלי
       </h1>
@@ -20,5 +20,6 @@
 
   <app-show-lesson *ngIf="'chitat' == UserSelectedTab"></app-show-lesson>
   <app-midrasha *ngIf="'midrasha' == UserSelectedTab"></app-midrasha>
+  <app-my-account *ngIf="'my-account' == UserSelectedTab"></app-my-account>
 </div>
 <!--router-outlet></router-outlet-->

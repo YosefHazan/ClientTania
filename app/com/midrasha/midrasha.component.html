@@ -1,8 +1,8 @@
 <!--a href="/chitat">מעבר לשיעורי החת"ת</a-->
 <!--a (click)="goToChitat()">למעבר לשיעורי החת"ת ליחצו כאן</a-->
 <br><br>
-  <div>
-    <!--panel search
+<!--div>
+  <panel search
     <input id="autocomplate" type="text" (keyup)="onKey($event)">
     <label for="autocomplate">:חיפוש שיעור</label>
 
@@ -25,7 +25,7 @@
         <td class="cell-table type">{{item['sug']}}</td>
         <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
         <td class="cell-table index"> {{i+1}} </td>
-        
+
       </tr>
     </table>
   </div>
