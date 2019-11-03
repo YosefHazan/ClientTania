@@ -38,20 +38,40 @@ export class MyAccountComponent implements OnInit {
     this.yyLoadMidrashaTable();
   }
   yyLoadChitatTable() {
-    this.yycookies.set("isWantCookies", "אישור", null, null, window.location.hostname);
-    this.yycookies.set("chitatArray", "אישור", null, null, window.location.hostname);
-    this.yycookies.set("midrashaArray", "אישור", null, null, window.location.hostname);
+    this.AllChitatLessons = this.yycookies.get("chitatArray");
   }
   yyLoadMidrashaTable() {
-
+    this.AllMidrashaLessons = this.yycookies.get("midrashaArray");
   }
   yySetUpCookies(){
-
+    this.yycookies.set("isWantCookies", "אישור", null, null, window.location.hostname);
+    this.yycookies.set("chitatArray", this.AllChitatLessons, null, null, window.location.hostname);
+    this.yycookies.set("midrashaArray", this.AllMidrashaLessons, null, null, window.location.hostname);
   }
-  yyRemuveChitat(){
-
+  yyRemuveChitat(specifieLesson: any){
+    //get all from cookie
+    this.yyLoadChitatTable();
+    //calculate them
+    //set
+    this.yycookies.set("chitatArray", this.AllChitatLessons, null, null, window.location.hostname);
   }
-  yyRemuveMidrasha(){
-    
+  yyRemuveMidrasha(specifieLesson: any){
+    //get all from cookie
+    this.yyLoadMidrashaTable()
+    //calaculate them
+    //set
+    this.yycookies.set("midrashaArray", this.AllMidrashaLessons, null, null, window.location.hostname);
   }
 }
+/*
+TODO: service that can be called from all com and add or remuve specifie Lesson
+ from the json object and store or retrieve at the cookie
+ 
+set
+var json_str = JSON.stringify(arr);
+createCookie('mycookie', json_str);
+
+get
+var json_str = getCookie('mycookie');
+var arr = JSON.parse(json_str);
+*/
