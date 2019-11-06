@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { ManageCookiesService } from '../../service/manage-cookies.service';
 import { minLessons } from '../../classes/minLessons';
 
 @Component({
@@ -8,70 +8,47 @@ import { minLessons } from '../../classes/minLessons';
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit {
-  private cookieValue: string;
-  private AllChitatLessons: minLessons;
-  private AllMidrashaLessons: minLessons;
+
   public btnText: string = "אישור";
-  constructor(private yycookies: CookieService) { }
+  public AllChitatLessons: minLessons[] = [];
+  public AllMidrashaLessons: minLessons[] = [];
+  constructor(private CookieService: ManageCookiesService) { }
 
   ngOnInit() {
-    if (this.yycookies.check("isWantCookies")) {
+    
+    if (this.CookieService.yyIsUserWantCookies()) {
       this.btnText = "ביטול שמירה";
-      this.yyLoadCookies();
+      this.AllChitatLessons = this.CookieService.yyLoadCookies();
+      console.log("ngOnInit + MyAccountComponent + cokies is full" );
+    }
+    else{
+      this.btnText = "אישור";
+      this.CookieService.yySetUpCookies();
+      console.log("ngOnInit + MyAccountComponent + cokies is empty" );
     }
   }
   yyIsWantCookies() {
     if (this.btnText == "אישור") {
       this.btnText = "ביטול שמירה";
-      this.yySetUpCookies();
+      this.CookieService.yySetUpCookies();
     }
-    else if (this.btnText == "ביטול שמירה"){
+    else if (this.btnText == "ביטול שמירה") {
       this.btnText = "אישור";
-      this.yyDestroyCookies();
+      this.CookieService.yyDestroyCookies();
+      this.AllChitatLessons = [];
+      this.AllMidrashaLessons = [];
     }
   }
-  yyDestroyCookies() {
-    this.yycookies.deleteAll(null, window.location.hostname);
-  }
-  yyLoadCookies() {
-    this.yyLoadChitatTable();
-    this.yyLoadMidrashaTable();
-  }
-  yyLoadChitatTable() {
-    this.AllChitatLessons = this.yycookies.get("chitatArray");
-  }
-  yyLoadMidrashaTable() {
-    this.AllMidrashaLessons = this.yycookies.get("midrashaArray");
-  }
-  yySetUpCookies(){
-    this.yycookies.set("isWantCookies", "אישור", null, null, window.location.hostname);
-    this.yycookies.set("chitatArray", this.AllChitatLessons, null, null, window.location.hostname);
-    this.yycookies.set("midrashaArray", this.AllMidrashaLessons, null, null, window.location.hostname);
-  }
-  yyRemuveChitat(specifieLesson: any){
-    //get all from cookie
-    this.yyLoadChitatTable();
-    //calculate them
-    //set
-    this.yycookies.set("chitatArray", this.AllChitatLessons, null, null, window.location.hostname);
-  }
-  yyRemuveMidrasha(specifieLesson: any){
-    //get all from cookie
-    this.yyLoadMidrashaTable()
-    //calaculate them
-    //set
-    this.yycookies.set("midrashaArray", this.AllMidrashaLessons, null, null, window.location.hostname);
+
+  yySpecificLesson(thisLess: any, yyChitatOrMidrasha: string) {
+
+    if (yyChitatOrMidrasha == "Chitat") {
+      this.CookieService.yyRemuveSpecificChitat(thisLess);
+      this.AllChitatLessons = this.AllChitatLessons.filter(obj => obj !== thisLess);
+    }
+    else {
+      this.CookieService.yyRemuveSpecificMidrasha(thisLess);
+      this.AllMidrashaLessons = this.AllChitatLessons.filter(obj => obj !== thisLess);
+    }
   }
 }
-/*
-TODO: service that can be called from all com and add or remuve specifie Lesson
- from the json object and store or retrieve at the cookie
- 
-set
-var json_str = JSON.stringify(arr);
-createCookie('mycookie', json_str);
-
-get
-var json_str = getCookie('mycookie');
-var arr = JSON.parse(json_str);
-*/

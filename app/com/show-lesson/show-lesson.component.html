@@ -17,10 +17,11 @@
                 <p>{{lesson1['audio']}}</p><br>
             </div>
             <div class="audio">
-                <audio  controls name="media">
+                <audio controls name="media">
                     <source src='{{lesson1["audio"]}}' type="audio/mp3">
                 </audio>
             </div>
+               <div class="cell-table index"> <button (click)="yySaveInCookie({Name:lesson1['title'],Url:lesson1['audio'],Type:lesson1['sug']},'chitat')">שמירה</button> </div>
             <p style="display:none;">{{lesson1["date"]}}</p>
         </div>
     </div>

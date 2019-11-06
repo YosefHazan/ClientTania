@@ -8,30 +8,33 @@
     <h2>רשימת שיעורי חת"ת שנשמרו</h2>
     <table>
         <tr>
+            <th class="cell-table btn"> </th>
             <th class="cell-table type">תגית</th>
             <th class="cell-table-big">שם השיעור</th>
             <th class="cell-table index"> </th>
         </tr>
         <tr class="row-table yyAllLessons" *ngFor="let item of AllChitatLessons; let i = index">
-            <td class="cell-table index"> <button (click)="yyRemuveChitat(this)">מחק</button> </td>
-            <td class="cell-table type">{{item['sug']}}</td>
-            <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
-            <td class="cell-table index"> {{i+1}} </td>
+            <td class="cell-table index"> <button (click)="yySpecificLesson(item,'Chitat')">מחק </button> </td>
+            <td class="cell-table type">{{item['Type']}}</td>
+            <td class="cell-table-big"><a href="{{item['Url']}}" target="_blank"> {{item['Name']}}</a></td>
+            <td class="cell-table index"> {{i+1}}</td>
         </tr>
     </table>
-    <br>
+    <br><br><br><br>
     <h2>רשימת שיעורים שנשמרו מהמדרשה</h2>
     <table>
         <tr>
             <th class="cell-table type">תגית</th>
             <th class="cell-table-big">שם השיעור</th>
             <th class="cell-table index"> </th>
+            <th class="cell-table btn"> </th>
         </tr>
         <tr class="row-table yyAllLessons" *ngFor="let item of AllMidrashaLessons; let i = index">
-            <td class="cell-table index"> <button (click)="yyRemuveMidrasha(this)">מחק</button> </td>
-            <td class="cell-table type">{{item['sug']}}</td>
-            <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
+            <td class="cell-table index"> <button (click)="yySpecificLesson(item,'Midrasha')">מחק</button> </td>
+            <td class="cell-table type">{{item['Name']}}</td>
+            <td class="cell-table-big"><a href="{{item['Url']}}" target="_blank"> {{item['Type']}}</a></td>
             <td class="cell-table index"> {{i+1}} </td>
+            <th class="cell-table btn"> </th>
         </tr>
     </table>
 </div>

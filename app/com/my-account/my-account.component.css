@@ -11,11 +11,11 @@ table{
 .cell-table{
     margin:5px;
     right:0px;
-    width:20px;
+    width:17px;
 }
 .cell-table-big{
     right:0px;
-    width:300px;
+    width:260px;
 }
 tr:nth-child(even) {
     background-color: #dddddd;
