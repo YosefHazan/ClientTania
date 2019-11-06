@@ -18,7 +18,8 @@ export class MyAccountComponent implements OnInit {
     
     if (this.CookieService.yyIsUserWantCookies()) {
       this.btnText = "ביטול שמירה";
-      this.AllChitatLessons = this.CookieService.yyLoadCookies();
+      this.AllChitatLessons = this.CookieService.yyLoadCookies('Chitat');
+      this.AllMidrashaLessons = this.CookieService.yyLoadCookies('Midrasha');
       console.log("ngOnInit + MyAccountComponent + cokies is full" );
     }
     else{

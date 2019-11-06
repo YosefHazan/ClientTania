@@ -23,7 +23,7 @@
       <th class="cell-table index"> </th>
     </tr>
     <tr class="row-table yyAllLessons" *ngFor="let item of AllLessons; let i = index">
-      <td class="cell-table index"> <button (click)="yySaveInCookie({Name:lesson1['title'],Url:lesson1['link'],Type:lesson1['sug']})">שמירה</button> </td>
+      <td class="cell-table index"> <button (click)="yySaveInCookie({Name:item['title'],Url:item['link'],Type:item['sug']});">שמירה</button> </td>
       <td class="cell-table type">{{item['sug']}}</td>
       <td class="cell-table-big"><a href="{{item['link']}}" target="_blank"> {{item['title']}}</a></td>
       <td class="cell-table index"> {{i+1}} </td>

@@ -1,7 +1,10 @@
-import { Component, OnInit, Renderer2, ElementRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CallToMidrashaService } from '../../service/call-to-midrasha.service';
 import { minLessons } from '../../classes/minLessons';
+import { ManageCookiesService }from '../../service/manage-cookies.service';
 import { Router } from '@angular/router';
+import { CallToChitatService } from '../../service/call-to-chitat.service';
+
 
 //@ViewChild('one', { static: false }) d1: ElementRef;
 
@@ -21,7 +24,7 @@ export class MidrashaComponent implements OnInit {
   private glObj:minLessons;
   //private d1:ElementRef;
   
-  constructor(private lessonsService: CallToMidrashaService,  private router:Router) {}//private renderer:Renderer2
+  constructor(private lessonsService: CallToMidrashaService,  private router:Router, private yyMCS:ManageCookiesService) {}//private renderer:Renderer2
   /*
   ngAfterViewInit() {
     const d2 = this.renderer.createElement('div');
@@ -77,5 +80,7 @@ export class MidrashaComponent implements OnInit {
   {
     this.router.navigateByUrl('chitat');
   }
-
+  yySaveInCookie(thisLess: minLessons) {
+    this.yyMCS.yySetSpecificMidrasha(thisLess)
+  }
 }

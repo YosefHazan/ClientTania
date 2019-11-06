@@ -35,36 +35,49 @@ export class ManageCookiesService {
   }
   private yyMyCookiesGet(cookieName: string) {
     let help;
-    help =  this.yycookies.get(cookieName);
+    help = this.yycookies.get(cookieName);
     //console.log( JSON.parse(this.yycookies.get(cookieName)));
     console.log(help);
     return help;
   }
-//=====================================================
+  //=====================================================
   //load
-  yyLoadCookies() :minLessons[]{
+  yyLoadCookies(typeLessons: string): minLessons[] {
+    let help;
     console.log("yyLoadCookies");
-    return this.yyLoadChitatTable();
-    this.yyLoadMidrashaTable();
+    if (typeLessons == "Chitat") {
+      return this.yyLoadChitatTable();
+    }
+    else { 
+      return this.yyLoadMidrashaTable();
+    }
   }
   //=====================================================
-  yyLoadChitatTable() :minLessons[]{
+  yyLoadChitatTable(): minLessons[] {
     console.log("yyLoadChitatTable");
-    let help =this.yyMyCookiesGet(this.CookieChitatName);
+    let help = this.yyMyCookiesGet(this.CookieChitatName);
     if (help === "") {
       this.AllChitatLessons = [];
     }
     else {
-      this.AllChitatLessons.map((elm)=>elm = JSON.parse(help));
+      this.AllChitatLessons.map((elm) => elm = JSON.parse(help));
       console.log(JSON.parse(help) + "==JSON.parse(help)");
     }
     console.log(help + "nojson==JSON.parse(help)");
-    console.log( this.AllChitatLessons+"this.AllChitatLessons");
+    console.log(this.AllChitatLessons + "this.AllChitatLessons");
     return this.AllChitatLessons;
   }
   //=====================================================
   yyLoadMidrashaTable() {
-    this.AllMidrashaLessons = this.yyMyCookiesGet(this.CookieMidrashaName);
+    let help = this.yyMyCookiesGet(this.CookieMidrashaName);
+
+    if (help === "") {
+      this.AllMidrashaLessons = [];
+    }
+    else {
+      this.AllMidrashaLessons.map((elm) => elm = JSON.parse(help));
+    }
+    return this.AllMidrashaLessons;
   }
 
   //set
@@ -76,23 +89,28 @@ export class ManageCookiesService {
     this.yycookies.set(this.CookieMidrashaName, "", null, null, this.yyHostName);
   }
   yySetSpecificChitat(specifieLesson: minLessons) {
-    console.log("step 1 -"+specifieLesson + " : specifieLesson");
-    console.log("step 2 -"+this.AllChitatLessons + " : AllChitatLessons");
+    console.log("step 1 -" + specifieLesson + " : specifieLesson");
+    console.log("step 2 -" + this.AllChitatLessons + " : AllChitatLessons");
     this.yyLoadChitatTable();
-    console.log("step 3 -"+this.AllChitatLessons + " : AllChitatLessons");
+    console.log("step 3 -" + this.AllChitatLessons + " : AllChitatLessons");
     if (this.AllChitatLessons === null) {
       this.AllChitatLessons[0] = specifieLesson;
     }
     else {
       this.AllChitatLessons.push(specifieLesson);
     }
-    console.log("step 4 -"+this.AllChitatLessons + " : AllChitatLessons");
+    console.log("step 4 -" + this.AllChitatLessons + " : AllChitatLessons");
     this.yyMyCookiesSet(this.CookieChitatName, this.AllChitatLessons);
   }
 
   yySetSpecificMidrasha(specifieLesson: minLessons) {
     this.yyLoadMidrashaTable();
-    this.AllMidrashaLessons.push(specifieLesson);
+    if (this.AllMidrashaLessons === null) {
+      this.AllMidrashaLessons[0] = specifieLesson;
+    }
+    else {
+      this.AllMidrashaLessons.push(specifieLesson);
+    }
     this.yyMyCookiesSet(this.CookieMidrashaName, this.AllMidrashaLessons);
   }
 
