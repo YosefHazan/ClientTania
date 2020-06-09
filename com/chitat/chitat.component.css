@@ -1,0 +1,39 @@
+ ::shadow .msg {
+    float: right;
+    width: 57%;
+    margin: 0% 20%;
+    border: 5px solid rgb(129, 155, 194);
+    border-radius: 5px;
+}
+::shadow .card {
+    text-align: left;
+    background-color: rgb(129, 155, 194);
+    margin: 5px;
+    left: 20px;
+}
+::shadow .audio{
+    text-align: left;
+}
+::shadow .label, ::shadow .content{
+    text-align: right;
+}
+.date {
+    text-align: center;
+}
+.date p {
+    background-color: rgba(225,245,254,.92);
+    width: 40%;
+    border: 5px;
+    border-radius: 5px;
+    margin: 10px 30%;
+}
+@media only screen and (max-width: 600px) 
+{
+    .msg {
+        float: right;
+        width: 92%;
+        margin: 0% 2%;
+        border: 5px solid white;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,28 @@
+<br><br>
+<div class="date">
+    <p id="showDate">היום</p>
+</div>
+<div class="w3-container">
+    <div *ngFor="let lesson1 of AllLessons" class="w3-panel w3-card">
+        <div class='lesson' >
+            <div class="label">
+                <label><h3>{{lesson1['sug']}} {{lesson1['title']}}</h3></label>
+            </div>
+            <div class="content">
+                <p>{{lesson1['mydesc']}}</p><br>
+            </div>
+            <div class="text" style="display: none">
+                <p>{{lesson1['text']}}</p><br>
+            </div>
+            <div class="link">
+                <p>{{lesson1['audio']}}</p><br>
+            </div>
+            <div class="audio">
+                <audio controls name="media">
+                    <source src='{{lesson1["audio"]}}' type="audio/mp3">
+                </audio>
+            </div>
+            <p style="display:none;">{{lesson1["date"]}}</p>
+        </div>
+    </div>
+</div>
