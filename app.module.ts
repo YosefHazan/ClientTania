@@ -13,7 +13,8 @@ import { MidrashaComponent } from './com/midrasha/midrasha.component';
 import { chitatComponent } from './com/chitat/chitat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MidrashaYomitComponent } from './com/midrasha-yomit/midrasha-yomit.component';
-import { AAAComponent } from './com/aaa/aaa.component';
+import { BuyBooksComponent } from './com/buy-books/buy-books.component';
+import { BuyLecturesComponent } from './com/buy-lectures/buy-lectures.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AAAComponent } from './com/aaa/aaa.component';
     MidrashaComponent,
     chitatComponent,
     MidrashaYomitComponent,
-    AAAComponent
+    BuyBooksComponent,
+    BuyLecturesComponent
   ],
   imports: [
     FormsModule,

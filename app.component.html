@@ -1,4 +1,5 @@
-<div class="w3-cell-row w3-blue">
+<div class="w3-table">
+<div class="w3-row w3-blue">
   <h3 id="cotar-nav" class="w3-right" >
     <p>לחיות עם הזמן</p>
   </h3>
@@ -12,15 +13,23 @@
     <a class="w3-bar-item w3-button testbtn" routerLink="/midrasha-yomit" routerLinkActive="active">
       <img src="//tanyayomi.com/yy/icons/tab_Lesson.png" />מדרשה יומית
     </a>
-    <!--a class="w3-bar-item w3-button testbtn" routerLink="/midrasha" routerLinkActive="active" style="display:none">שאלות ותשובות על החתת היומי</a-->
-    <a class="w3-bar-item w3-button testbtn" routerLink="/" routerLinkActive="active">
+    <a class="w3-bar-item w3-button testbtn" routerLink="/buyBooks" routerLinkActive="active">
       <img src="//tanyayomi.com/yy/icons/tab_Books.png" />ספרים מומלצים
     </a>
-    <a class="w3-bar-item w3-button testbtn" routerLink="/" routerLinkActive="active">
+    <a class="w3-bar-item w3-button testbtn" routerLink="/buyLectures" routerLinkActive="active">
       <img src="//tanyayomi.com/yy/icons/tab_Lectures.png" />הרצאות
     </a>
   </nav>
 </div>
-<div>
-  <router-outlet></router-outlet>
+  <div class="w3-row">
+    <div class="Width30Persent">
+      <app-buy-lectures></app-buy-lectures>
+    </div>
+    <div class="Width30Persent">
+      <app-buy-books></app-buy-books>
+    </div>
+    <div class="Width30Persent">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
