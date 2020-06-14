@@ -1,8 +1,7 @@
-<br><br>
-<div class="date">
-    <p id="showDate">היום</p>
-</div>
-<div class="w3-container">
+<div class="w3-col m5 w3-right"><!--TODO:COMPONNET-->
+    <div class="date">
+        <p id="showDate">היום</p>
+    </div>
     <div *ngFor="let lesson1 of AllLessons" class="w3-panel w3-card">
         <div class='lesson' >
             <div class="label">
@@ -11,9 +10,10 @@
             <div class="content">
                 <p>{{lesson1['mydesc']}}</p><br>
             </div>
-            <div class="text" style="display: none">
-                <p>{{lesson1['text']}}</p><br>
-            </div>
+            
+                <div class="text">
+                    <p>{{lesson1['text']}}</p><br>
+                </div>
             <div class="link">
                 <p>{{lesson1['audio']}}</p><br>
             </div>
@@ -26,3 +26,6 @@
         </div>
     </div>
 </div>
+<div class="yy-cell-6"><!--TODO:COMPONNET-->
+    </div>
+

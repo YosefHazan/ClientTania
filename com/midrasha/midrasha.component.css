@@ -1,4 +1,4 @@
-table{
+#lesson{
     margin: 0px auto;
 }
 .row-table{
@@ -16,3 +16,7 @@ table{
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+th, td{
+    text-align:right !important;
+}
+table{width:100%;}

@@ -8,17 +8,20 @@
     </div>
   </div> -->
 
-<div id="theList" class="w3-center">
+<div id="theList" class="yy-cell-3 w3-right">
   <h2>רשימת השיעורים המלאה</h2>
-  <div class="w3-container">
-    <span class="w3-tag w3-round-large w3-white w3-center w3-margin w3-padding-small w3-hover-gray"  *ngFor='let category of TablesName; let ii = index' >
-      <div (click)="yyCalToMidrashaByTable(category['Url'])">
+  <h5 style="background-color:darkseagreen">לינק לווצאפ בהמשך</h5>
+  <table id="menu">
+    <tr class=" w3-hover-gray w3-margin w3-padding-small"  
+    *ngFor='let category of TablesName; let ii = index' >
+      <td (click)="yyCalToMidrashaByTable(category['Url'])">
         {{category['Name']}}
-      </div>
-    </span>
-  </div>
-  <div class="w3-container">
-  <table class="w3-card">
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="yy-cell-6 w3-left">
+  <table id="lesson" style="text-align: right !important;">
     <tr>
       <th class="cell-table index"> </th>
       <th class="cell-table-big">שם השיעור</th>
@@ -33,5 +36,4 @@
       <td class="cell-table-big"><a href="{{item['audio']}}" target="_blank"> {{item['audio']}}</a></td>
     </tr>
   </table>
-</div>
 </div>
