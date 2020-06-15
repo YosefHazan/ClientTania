@@ -11,7 +11,6 @@
 }
 .cell-table-big{
     right:0px;
-    width:300px;
 }
 tr:nth-child(even) {
     background-color: #dddddd;
@@ -20,3 +19,4 @@ th, td{
     text-align:right !important;
 }
 table{width:100%;}
+

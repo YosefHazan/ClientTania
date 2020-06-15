@@ -7,33 +7,32 @@
       {{nameToReq}} :
     </div>
   </div> -->
-
-<div id="theList" class="yy-cell-3 w3-right">
+<div id="theList" class="w3-third w3-right">
   <h2>רשימת השיעורים המלאה</h2>
   <h5 style="background-color:darkseagreen">לינק לווצאפ בהמשך</h5>
   <table id="menu">
     <tr class=" w3-hover-gray w3-margin w3-padding-small"  
-    *ngFor='let category of TablesName; let ii = index' >
+      *ngFor='let category of TablesName; let ii = index' >
       <td (click)="yyCalToMidrashaByTable(category['Url'])">
-        {{category['Name']}}
+          {{category['Name']}}
       </td>
     </tr>
   </table>
-</div>
-<div class="yy-cell-6 w3-left">
+</div> 
+<div class="w3-twothird">
   <table id="lesson" style="text-align: right !important;">
     <tr>
       <th class="cell-table index"> </th>
       <th class="cell-table-big">שם השיעור</th>
       <th class="cell-table-big">פרטים</th>
-      <th class="cell-table type">לינק</th>
-      <th class="cell-table index"> </th>
+      <th class="cell-table-big type">לינק</th>
     </tr>
     <tr class="row-table yyAllLessons" *ngFor="let item of AllLessons; let i = index">
       <td class="cell-table index"> {{i+1}} </td>
-      <td class="cell-table type">{{item["title"]}} {{item["MyDesc"]}} {{item["Text"]}}</td>
-      <td class="cell-table type">{{item["parasha"]}} {{item["humash"]}} {{item["cheleck"]}}</td>
+      <td class="cell-table-big type">{{item["title"]}} {{item["MyDesc"]}} {{item["Text"]}}</td>
+      <td class="cell-table-big type">{{item["parasha"]}} {{item["humash"]}} {{item["cheleck"]}}</td>
       <td class="cell-table-big"><a href="{{item['audio']}}" target="_blank"> {{item['audio']}}</a></td>
     </tr>
   </table>
 </div>
+
