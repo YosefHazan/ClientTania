@@ -13,6 +13,7 @@ import { minLessons } from '../../classes/minLessons';
 export class chitatComponent implements OnInit {
   public callObservable: any;
   public AllLessons: any;
+  public isShow:boolean = false;
 
   constructor(private ReqSer: CallToChitatService) { }
 
@@ -57,5 +58,8 @@ export class chitatComponent implements OnInit {
   }*/
   ngOnDestroy() {
     this.callObservable.unsubscribe();
+  }
+  toggleDisplay(){
+    this.isShow = !this.isShow;
   }
 }

@@ -1,19 +1,16 @@
-<div class="w3-third w3-right"><!--TODO:COMPONNET-->
+<div class=""><!--TODO:COMPONNET-->
     <div class="date">
         <p id="showDate">היום</p>
     </div>
-    <div *ngFor="let lesson1 of AllLessons" class="w3-panel w3-card">
+    <div *ngFor="let lesson1 of AllLessons" class="w3-panel">
         <div class='lesson' >
+            <div class="w3-third w3-right">
             <div class="label">
-                <label><h3>{{lesson1['sug']}} {{lesson1['title']}}</h3></label>
+                <label><h3 (click) = toggleDisplay()>{{lesson1['sug']}} {{lesson1['title']}}</h3></label>
             </div>
             <div class="content">
                 <p>{{lesson1['mydesc']}}</p><br>
             </div>
-            
-                <div class="text">
-                    <p>{{lesson1['text']}}</p><br>
-                </div>
             <div class="link">
                 <p>{{lesson1['audio']}}</p><br>
             </div>
@@ -24,8 +21,11 @@
             </div>
             <p style="display:none;">{{lesson1["date"]}}</p>
         </div>
+            <div class="text w3-twothird" [hidden] = "isShow">
+                <p>{{lesson1['text']}}</p><br>
+            </div>
+        </div>
     </div>
 </div>
-<div class="w3-twothird"><!--TODO:COMPONNET-->
-    </div>
+
 
