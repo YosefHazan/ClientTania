@@ -13,8 +13,9 @@ import { minLessons } from '../../classes/minLessons';
 export class chitatComponent implements OnInit {
   public callObservable: any;
   public AllLessons: any;
-  public isShow:boolean = false;
-
+  public yyOneLesson:any;
+  public yyaudio:HTMLAudioElement;
+  
   constructor(private ReqSer: CallToChitatService) { }
 
   ngOnInit() {
@@ -23,8 +24,9 @@ export class chitatComponent implements OnInit {
     console.log("ngOnInit comp - show-lesson");
     this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
       this.AllLessons = data;
+      this.yyOneLesson = data[0];
+      document.getElementById('player').setAttribute( 'src',this.yyOneLesson['audio']);
 
-      console.log(data[4]['sug']);
       this.AllLessons.forEach(elm => {
         switch (elm['sug']) {
           case 't':
@@ -37,7 +39,7 @@ export class chitatComponent implements OnInit {
             elm['sug'] = "חומש";
             break;
           case 'p':
-            elm['sug'] = "";
+            elm['sug'] = "תהילים";
             break;
           case 'r':
           case 'r1':
@@ -46,20 +48,33 @@ export class chitatComponent implements OnInit {
           case 'r3':
             elm['sug'] = 'רמב"ם שלשה פרקים';
             break;
-
           default:
+            elm['sug'] =" ";
             break;
         }
       });
     });
-  }/*
-  goToMidrshae() {
-    this.router.navigateByUrl('midrasha');
-  }*/
+  }
   ngOnDestroy() {
     this.callObservable.unsubscribe();
   }
-  toggleDisplay(){
-    this.isShow = !this.isShow;
+  toggleDisplay(yyindex){
+    this.yyOneLesson = yyindex;
+    document.getElementById('player').setAttribute( 'src',this.yyOneLesson['audio']);
+    console.log(this.yyOneLesson['audio']);
+    /*setTimeout(() => {
+      let container = document.getElementsByTagName('audio');
+      let content = container.innerHTML;
+      container.innerHTML= content; 
+    }, 100);
   }
+  PlayLesson(){
+    this.yyaudio.src = this.yyOneLesson['audio'];
+    //this.yyaudio.load();
+    this.yyaudio.play();
+  }
+  PouseLesson(){
+    this.yyaudio.pause();*/
+  }
+  
 }

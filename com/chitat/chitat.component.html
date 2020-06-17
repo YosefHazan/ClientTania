@@ -1,31 +1,29 @@
-<div class=""><!--TODO:COMPONNET-->
+<div class="w3-third w3-right"><!--TODO:COMPONNET-->
     <div class="date">
         <p id="showDate">היום</p>
     </div>
-    <div *ngFor="let lesson1 of AllLessons" class="w3-panel">
-        <div class='lesson' >
-            <div class="w3-third w3-right">
-            <div class="label">
-                <label><h3 (click) = toggleDisplay()>{{lesson1['sug']}} {{lesson1['title']}}</h3></label>
-            </div>
-            <div class="content">
-                <p>{{lesson1['mydesc']}}</p><br>
-            </div>
-            <div class="link">
-                <p>{{lesson1['audio']}}</p><br>
-            </div>
-            <div class="audio">
-                <audio controls name="media">
-                    <source src='{{lesson1["audio"]}}' type="audio/mp3">
-                </audio>
-            </div>
-            <p style="display:none;">{{lesson1["date"]}}</p>
-        </div>
-            <div class="text w3-twothird" [hidden] = "isShow">
-                <p>{{lesson1['text']}}</p><br>
-            </div>
+    <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
+        <div (click) = "toggleDisplay(lesson1)" class="lesson">
+            <label ><h3>{{lesson1['sug']}}</h3></label>
         </div>
     </div>
 </div>
-
+<div class="text w3-twothird w3-panel w3-left">
+    <div class="w3-row">
+    <div class="w3-third w3-right">
+        <label><h3>{{yyOneLesson['sug']}} {{yyOneLesson['title']}}</h3></label>
+    </div>
+</div>
+<div class="w3-row">
+    <p class="w3-third w3-right">{{yyOneLesson['mydesc']}}</p>
+    <audio class="w3-third w3-left" controls name="media" id="player" >
+        <source id="player12" src={{yyOneLesson["audio"]}} type="audio/mp3">
+        </audio>
+    <p class="w3-third w3-center">{{yyOneLesson['audio']}}</p>
+</div>
+<div class="w3-row">
+    <p>{{yyOneLesson['text']}}</p>
+</div>
+</div>
+        
 
