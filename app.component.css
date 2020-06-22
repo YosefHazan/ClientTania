@@ -4,3 +4,17 @@
 img{
     width: 70px;
 }
+#cotar-nav > a{
+    text-decoration: none;
+}
+#MainLogo{
+    height: 50px;
+    width: 50px;
+    margin: 19px 5px;
+
+    text-shadow: 11px 16px 12px black;
+}
+#cotar-nav h5{
+    margin-bottom: 0px;
+    margin-top: 16px;
+}

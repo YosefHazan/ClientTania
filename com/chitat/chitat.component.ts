@@ -37,9 +37,11 @@ export class chitatComponent implements OnInit {
             break;
           case 'c':
             elm['sug'] = "חומש";
+            //TODO: put before "()" -> <br>
             break;
           case 'p':
             elm['sug'] = "תהילים";
+            //TODO: put before "פרק" -> <br>
             break;
           case 'r':
           case 'r1':

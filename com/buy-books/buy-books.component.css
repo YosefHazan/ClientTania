@@ -1,0 +1,26 @@
+img{width:100px;}
+h5{
+    font-weight: bold;
+}
+#for-Buy{
+    direction: rtl;
+    height: 44px;
+    width: 450px;
+    font-size: 28px;
+    margin-top: 6px;
+    background-color: #ffa500;
+}
+
+.image-txt-container {
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+    float: right;
+    margin: 10px;
+}
+.image-txt-container p{
+    width: 286px;
+    padding: 0px;
+    margin: 0px;
+}
+
