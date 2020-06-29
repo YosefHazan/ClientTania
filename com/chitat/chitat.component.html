@@ -2,6 +2,10 @@
     <div class="date">
         <p id="showDate">היום</p>
     </div>
+    <h5 style="background-color:#25D366" >
+        לקבלת שיעורים מידי יום לווצאפ
+        <a href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">לחצו כאן</a>
+      </h5>
     <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
         <div (click) = "toggleDisplay(lesson1)" class="lesson">
             <label ><h3>{{lesson1['sug']}}</h3></label>
@@ -10,7 +14,7 @@
 </div>
 <div class="text w3-twothird w3-panel w3-left">
     <div class="w3-row">
-    <div class="w3-third w3-right">
+    <div >
         <label><h3>{{yyOneLesson['sug']}} {{yyOneLesson['title']}}</h3></label>
     </div>
 </div>

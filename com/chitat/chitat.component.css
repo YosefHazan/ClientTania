@@ -1,6 +1,3 @@
-.row:nth-child(even) {
-    background-color: #dddddd;
-}
 .date {
     text-align: center;
 }
@@ -13,4 +10,10 @@
 }
 p{
     font-size: 18px;
+}
+.w3-third{
+    background-color: #dadada;
+}
+.yy-active{
+    background-color:#00FFFF;
 }
