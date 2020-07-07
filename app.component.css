@@ -1,3 +1,6 @@
+.row{
+    border-top: solid 1px black;
+}
 #cotar-nav{
     margin: 0% !important;
 }
@@ -17,4 +20,27 @@ img{
 #cotar-nav h5{
     margin-bottom: 0px;
     margin-top: 16px;
+}
+@media screen and (max-width:600px){
+    a{
+        margin: 1px;
+        padding: 1px;
+    }
+    nav{
+        margin: 0px;
+        padding: 0px;
+    }
+    img{
+        width:35px;
+        height:35px;
+        margin-top: 13px;
+    }
+    h5{
+        font-size:15px;
+    }
+    #cotar-nav{
+        display: none;
+    }
+
+
 }

@@ -24,6 +24,8 @@ export class MidrashaComponent implements OnInit {
   public TablesNameObservable : any;
   private glObj:minLessons;
   
+  renderer: any;
+  
   constructor(private lessonsService: CallToMidrashaService,
               private tableService: GetAllCategoryLessonService) {}
   /*
@@ -56,7 +58,8 @@ export class MidrashaComponent implements OnInit {
     this.Lessons = this.getLessons(this.nameToReq);
   }
   */
-  yyCalToMidrashaByTable(TablesName:string){
+  yyCalToMidrashaByTable(event:any, TablesName:string){
+    
    //get all lessons exist in midrasha
     this.callObservable = this.lessonsService.getAllLessons(TablesName).subscribe(data=>{
       this.AllLessons = data;

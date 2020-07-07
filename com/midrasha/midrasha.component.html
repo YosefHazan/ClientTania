@@ -9,17 +9,19 @@
   </div> -->
 <div id="theList" class="w3-third w3-right">
   <h2>רשימת השיעורים המלאה</h2>
-  <h5 style="background-color:darkseagreen">
-     לינק לווצאפ בהמשך</h5>
+  <h5 style="background-color:#25D366" >
+    לקבלת שיעורים חדשים לווצאפ
+    <a href="https://chat.whatsapp.com/FZjM4iESdL71p7uctLrN3M">לחצו כאן</a>
+  </h5>
      <!--span style='font-size:100px;'>&#128488;</span-->
-  <table id="menu">
-    <tr class=" w3-hover-gray w3-margin w3-padding-small"  
+  
+    <div class="row"  
       *ngFor='let category of TablesName; let ii = index' >
-      <td (click)="yyCalToMidrashaByTable(category['Url'])">
-          {{category['Name']}}
-      </td>
-    </tr>
-  </table>
+      <label (click)="yyCalToMidrashaByTable($event, category['Url'])">
+          <h3>{{category['Name']}}</h3>
+      </label>
+    </div>
+  
 </div> 
 <div class="w3-twothird">
   <table id="lesson" style="text-align: right !important;">
