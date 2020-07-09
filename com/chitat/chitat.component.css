@@ -11,8 +11,10 @@
 p{
     font-size: 18px;
 }
-.w3-third{
-    background-color: #dadada;
+@media screen and (min-width:600px){
+    .w3-third{
+        background-color: #dadada;
+    }
 }
 .yy-active{
     background-color:#00FFFF;

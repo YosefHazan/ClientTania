@@ -16,12 +16,15 @@ th, td{
     text-align:right !important;
 }
 table{width:100%;}
-
-.w3-third{
-    background-color: #dadada;
+@media screen and (min-width:600px){
+    .w3-third{
+        background-color: #dadada;
+    }
 }
 tr{
     border-bottom-width:1px;
     border-bottom-style: solid;
     border-bottom-color:black;
 }
+
+
