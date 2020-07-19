@@ -58,8 +58,15 @@ export class MidrashaComponent implements OnInit {
     this.Lessons = this.getLessons(this.nameToReq);
   }
   */
-  yyCalToMidrashaByTable(event:any, TablesName:string){
-    
+  yyCalToMidrashaByTable(yyid:any, TablesName:string){
+      //remuve old rowClicked
+      if(document.querySelector(".activRow"))
+      { 
+        document.querySelector(".activRow").classList.remove("activRow");
+      }
+      document.querySelector("#" + yyid).parentElement.classList.add("activRow");
+
+
    //get all lessons exist in midrasha
     this.callObservable = this.lessonsService.getAllLessons(TablesName).subscribe(data=>{
       this.AllLessons = data;

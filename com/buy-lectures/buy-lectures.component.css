@@ -9,3 +9,14 @@ h5{
     margin-top: 6px;
     background-color: #ffa500;
 }
+@media screen and (max-width:600px){
+    #for-Buy{
+        width: 80%;
+        height: 100%;
+        font-size: medium;   
+        margin: 6px auto;     
+    }
+    p{
+        width: 50% !important;
+    }
+}

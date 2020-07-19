@@ -7,7 +7,7 @@
         <a href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">לחצו כאן</a>
       </h5>
     <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
-        <div (click) = "toggleDisplay(lesson1)" class="lesson">
+        <div (click) = "toggleDisplay(lesson1, 'id'+i)" class="lesson" [id]="'id'+i">
             <label ><h3>{{lesson1['sug']}}</h3></label>
         </div>
     </div>

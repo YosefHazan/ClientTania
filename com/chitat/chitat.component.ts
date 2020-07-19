@@ -60,15 +60,18 @@ export class chitatComponent implements OnInit {
   ngOnDestroy() {
     this.callObservable.unsubscribe();
   }
-  toggleDisplay(yyindex){
+  toggleDisplay(yyindex:any, yyid){
+    //remuve old rowClicked
+    if(document.querySelector(".activRow"))
+    { 
+      document.querySelector(".activRow").classList.remove("activRow");
+    }
+    document.querySelector("#" + yyid).parentElement.classList.add("activRow");
+
+    //muve leesons
     this.yyOneLesson = yyindex;
     document.getElementById('player').setAttribute( 'src',this.yyOneLesson['audio']);
     console.log(this.yyOneLesson['audio']);
-    /*setTimeout(() => {
-      let container = document.getElementsByTagName('audio');
-      let content = container.innerHTML;
-      container.innerHTML= content; 
-    }, 100);
   }
   PlayLesson(){
     this.yyaudio.src = this.yyOneLesson['audio'];
@@ -76,7 +79,7 @@ export class chitatComponent implements OnInit {
     this.yyaudio.play();
   }
   PouseLesson(){
-    this.yyaudio.pause();*/
+    this.yyaudio.pause();
   }
   
 }

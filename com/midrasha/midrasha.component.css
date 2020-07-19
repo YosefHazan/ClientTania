@@ -12,6 +12,10 @@
 .cell-table-big{
     right:0px;
 }
+.row h3{
+    padding-top: 8px;
+    margin-block-start: 0em;
+}
 th, td{
     text-align:right !important;
 }
@@ -26,5 +30,11 @@ tr{
     border-bottom-style: solid;
     border-bottom-color:black;
 }
+.activRow{
+    height: 100%;
+    background-color:#00FFFF;
+}
+
+
 
 

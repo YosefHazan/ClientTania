@@ -17,7 +17,7 @@
   
     <div class="row"  
       *ngFor='let category of TablesName; let ii = index' >
-      <label (click)="yyCalToMidrashaByTable($event, category['Url'])">
+      <label (click)="yyCalToMidrashaByTable(('id'+ ii), category['Url'])" [id]="'id'+ ii">
           <h3>{{category['Name']}}</h3>
       </label>
     </div>
