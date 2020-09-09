@@ -21,6 +21,11 @@ img{
     margin-bottom: 0px;
     margin-top: 16px;
 }
+@media screen and (min-width:600px){
+    #yyRout{
+        background-color: #dadada !important;
+    }
+}
 @media screen and (max-width:600px){
     a{
         margin: 1px;

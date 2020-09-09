@@ -1,4 +1,5 @@
 #lesson{
+    background-color: white !important;/*TODO: is need important*/
     margin: 0px auto;
 }
 .row-table{

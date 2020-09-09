@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MidrashaYomitComponent } from './com/midrasha-yomit/midrasha-yomit.component';
 import { BuyBooksComponent } from './com/buy-books/buy-books.component';
 import { BuyLecturesComponent } from './com/buy-lectures/buy-lectures.component';
+import { HomePageComponent } from './com/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BuyLecturesComponent } from './com/buy-lectures/buy-lectures.component'
     chitatComponent,
     MidrashaYomitComponent,
     BuyBooksComponent,
-    BuyLecturesComponent
+    BuyLecturesComponent,
+    HomePageComponent
   ],
   imports: [
     FormsModule,
