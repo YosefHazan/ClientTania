@@ -8,21 +8,19 @@ import {formatDate} from '@angular/common';
   providedIn: 'root'
 })
 export class CallToChitatService {
-
+  private yyMyHost: string =  "https://tanyayomi.com/"; // "//localhost/"
   constructor(private http: HttpClient) { }
 
-   public getTodayLessons():Observable<any> {
-    
-    const url = 'https://tanyayomi.com/yy/yyGetToday.php?day=' + formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  public getTodayLessons():Observable<any> 
+  {
+    const url = this.yyMyHost + 'yy/yyGetToday.php?day=' + formatDate(new Date(), 'yyyy-MM-dd', 'en');
     console.log('cal to url ' + url);
-    return this.http.get(url).pipe(map((obj)=>{ 
+    return this.http.get(url).pipe(map((obj)=>
+    { 
       //return this.ajax().pipe(map((obj)=>{ 
       //console.log('mapping start ' );
-      
       console.log('mapping end with : ' + obj);
-
       return obj;
     }));
   };
-
 }

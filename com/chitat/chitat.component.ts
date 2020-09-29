@@ -28,7 +28,6 @@ export class chitatComponent implements OnInit {
       document.getElementById('player').setAttribute( 'src',this.yyOneLesson['fullUrl']);
 
       this.AllLessons.forEach(elm => {
-        
         switch (elm['sug']) {
           case 't':
             elm['sug'] = "תניא";
@@ -47,7 +46,6 @@ export class chitatComponent implements OnInit {
           case 'r':
           case 'r1':
             elm['sug'] = 'רמב"ם פרק אחד';
-            elm['fullUrl'] = elm['audio'];
             break;
           case 'r3':
             elm['sug'] = 'רמב"ם שלשה פרקים';
@@ -83,5 +81,4 @@ export class chitatComponent implements OnInit {
   PouseLesson(){
     this.yyaudio.pause();
   }
-  
 }
