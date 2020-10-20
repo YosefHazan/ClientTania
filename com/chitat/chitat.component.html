@@ -1,27 +1,20 @@
 <div class="w3-third w3-right"><!--TODO:COMPONNET-->
-    <div class="date">
-        <i style="font-size:24px" class="fa">&#xf0da;</i>
-        <p id="showDate"> היום </p>
-        <i style="font-size:24px" class="fa">&#xf0d9;</i>
-    </div>
-    <h5 style="background-color:#25D366" >
-        <a id="linkWhatapp" class="fa" href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">
+    <div id="row-whatsapp" style="background-color:#25D366;height: 35px !important;" >
+        <a style="font-size: 24px;" id="linkWhatapp" class="fa" href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">
         &#xf232;
         לחצו לקבלת חת"ת יומי לווצאפ
         </a>
-    </h5>
+    </div>
+    <div class="date">
+        <i style="font-size:24px" class="fa">&#xf0da;</i>
+        <p id="showDate"> היום </p>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <i style="font-size:24px" class="fa">&#xf0d9;</i>
+    </div>
     <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
         <div (click) = "toggleDisplay(lesson1, 'id'+i)" class="lesson" [id]="'id'+i">
             <label ><h3>{{lesson1['sug']}}</h3></label>
-            <div style="text-align: left;">
-                <input type="range" step="any" id="$yyRangeBar" value="0">
-                &nbsp;
-                <i style="font-size:24px" class="fa" onclick="$audio.play();">&#xf04b;</i> &nbsp;
-                <i style="font-size:24px" class="fa" onclick="$audio.pause();">&#xf04c;</i>&nbsp;
-                <i class="fa fa-stop" style="font-size:24px;" onclick="$audio.currentTime = 0;"></i> &nbsp;
-                <audio  id="$audio" src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg"></audio>  
-                &nbsp;
-            </div>
+            <app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output} from '@angular/core';
 import { Router } from '@angular/router';
 import { CallToChitatService } from '../../services/call-to-chitat.service';
 import { minLessons } from '../../classes/minLessons';
@@ -15,6 +15,7 @@ export class chitatComponent implements OnInit {
   public AllLessons: any;
   public yyOneLesson:any;
   public yyaudio:HTMLAudioElement;
+  public getSrcAudio:string;
   
   constructor(private ReqSer: CallToChitatService) { }
 
@@ -26,6 +27,7 @@ export class chitatComponent implements OnInit {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
       document.getElementById('player').setAttribute( 'src',this.yyOneLesson['fullUrl']);
+      this.getSrcAudio = this.yyOneLesson['fullUrl'];
 
       this.AllLessons.forEach(elm => {
         switch (elm['sug']) {
@@ -72,6 +74,7 @@ export class chitatComponent implements OnInit {
     this.yyOneLesson = yyindex;
     document.getElementById('player').setAttribute( 'src',this.yyOneLesson['fullUrl']);
     console.log("this.yyOneLesson['audio'] : " + this.yyOneLesson['fullUrl']);
+    this.getSrcAudio = this.yyOneLesson['fullUrl'];
   }
   PlayLesson(){
     this.yyaudio.src = this.yyOneLesson['fullUrl'];

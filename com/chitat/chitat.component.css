@@ -1,4 +1,5 @@
 .date {
+    background-color: #aeaeae;
     text-align: center;
 }
 .date p {
@@ -37,4 +38,10 @@ button{
 
 #linkWhatapp{
     text-decoration: none;
+}
+#row-whatsapp{
+    background-color:#25D366;
+    height: 35px !important;
+    padding-top:5px;
+    padding-right:5px;
 }
