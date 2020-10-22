@@ -11,6 +11,7 @@ import { minLessons } from '../../classes/minLessons';
 //encapsulation: ViewEncapsulation.None
 })
 export class chitatComponent implements OnInit {
+  public yyIsTuchHere:boolean[] = [];
   public callObservable: any;
   public AllLessons: any;
   public yyOneLesson:any;

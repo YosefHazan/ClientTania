@@ -8,7 +8,7 @@ import {formatDate} from '@angular/common';
   providedIn: 'root'
 })
 export class CallToChitatService {
-  private yyMyHost: string =  "https://tanyayomi.com/"; // "//localhost/"
+  private yyMyHost: string =  "https://tanyayomi.com/"; // "//localhost/yy/day=2020-09-29.js"
   constructor(private http: HttpClient) { }
 
   public getTodayLessons():Observable<any> 

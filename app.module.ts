@@ -16,7 +16,8 @@ import { MidrashaYomitComponent } from './com/midrasha-yomit/midrasha-yomit.comp
 import { BuyBooksComponent } from './com/buy-books/buy-books.component';
 import { BuyLecturesComponent } from './com/buy-lectures/buy-lectures.component';
 import { HomePageComponent } from './com/home-page/home-page.component';
-
+import { AudioCompsComponent} from './com/sub-com/audio-comps/audio-comps.component';
+import "@angular/compiler";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { HomePageComponent } from './com/home-page/home-page.component';
     MidrashaYomitComponent,
     BuyBooksComponent,
     BuyLecturesComponent,
-    HomePageComponent
+    HomePageComponent,
+    AudioCompsComponent
   ],
   imports: [
     FormsModule,

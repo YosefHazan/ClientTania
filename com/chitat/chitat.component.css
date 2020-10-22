@@ -31,11 +31,11 @@ button{
     margin: 0px;
     padding: 0px;
 }
-/* #\0024yyRangeBar == #$yyRangeBar */
+/* #\0024yyRangeBar == #$yyRangeBar 
 #\0024yyRangeBar{
     direction:ltr;
 }
-
+*/
 #linkWhatapp{
     text-decoration: none;
 }
@@ -44,4 +44,18 @@ button{
     height: 35px !important;
     padding-top:5px;
     padding-right:5px;
+}
+
+.row.activRow app-audio-comps{
+    display: inline-block;
+}
+.row app-audio-comps{
+    display:none;
+}
+
+.lesson{
+    text-align: left;
+}
+.lesson > div{
+    display: inline-block;
 }

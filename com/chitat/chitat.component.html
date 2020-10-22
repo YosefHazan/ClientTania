@@ -12,9 +12,9 @@
         <i style="font-size:24px" class="fa">&#xf0d9;</i>
     </div>
     <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
-        <div (click) = "toggleDisplay(lesson1, 'id'+i)" class="lesson" [id]="'id'+i">
-            <label ><h3>{{lesson1['sug']}}</h3></label>
-            <app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps>
+        <div class="lesson" [id]="'id'+i">
+            <div #yylabel (click) = "toggleDisplay(lesson1, 'id'+i)"><h3>{{lesson1['sug']}}</h3></div>
+            <div #yyAud><app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps></div>
         </div>
     </div>
 </div>
