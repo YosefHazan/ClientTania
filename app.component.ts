@@ -7,5 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public RouterbuyBooks:string = "/buyBooks";
+  public routerbuyLectures:string ="/buyLectures";
   constructor(){}
 }
