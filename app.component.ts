@@ -14,27 +14,30 @@ export class AppComponent {
   constructor(){}
   ManualRouterToBooks()
   {
+    var elmToHide;
     //in first time books and lacture is equal to false
     //and they are showing together
     //so i check if is first time then set only one in showing
-    if(this.RouterbuyLectures != this.RouterbuyBooks)
-    {
-      this.RouterbuyLectures = !this.RouterbuyLectures;
-    }
-    this.RouterbuyBooks = !this.RouterbuyBooks;
+    this.RouterbuyLectures = false;
+    this.RouterbuyBooks = true;
+    elmToHide = document.querySelector('[yyAttrr="descriptionArea"]');
+    elmToHide.style.display = 'none';
   }
   ManualRouterToLectures()
   {
-    if(this.RouterbuyLectures != this.RouterbuyBooks)
-    {
-      this.RouterbuyLectures = !this.RouterbuyLectures;
-    }
-    this.RouterbuyBooks = !this.RouterbuyBooks;
+    var elmToHide;
+    this.RouterbuyLectures = true;
+    this.RouterbuyBooks = false;
+    elmToHide = document.querySelector('[yyAttrr="descriptionArea"]');
+    elmToHide.style.display = 'none';
   }
   TurenOffLectureOrBook()
   {
+    var elmToHide;
     console.log("turn off");
     this.RouterbuyBooks = false;
     this.RouterbuyLectures = false;
+    elmToHide = document.querySelector('[yyAttrr="descriptionArea"]');
+    elmToHide.style.display = 'block';
   }
 }
