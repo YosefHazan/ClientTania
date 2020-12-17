@@ -1,0 +1,38 @@
+<div class="w3-third w3-right"><!--TODO:COMPONNET-->
+    <div id="row-whatsapp" style="background-color:#25D366;height: 35px !important;" >
+        <a style="font-size: 24px;" id="linkWhatapp" class="fa" href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">
+        &#xf232;
+        לחצו לקבלת חת"ת יומי לווצאפ
+        </a>
+    </div>
+    <div class="date">
+        <i style="font-size:24px" class="fa">&#xf0da;</i>
+        <p id="showDate"> היום </p>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <i style="font-size:24px" class="fa">&#xf0d9;</i>
+    </div>
+    <div *ngFor="let lesson1 of AllLessons; let i = index" class="row">
+        <div class="lesson" [id]="'id'+i" (click) = "toggleDisplay(lesson1, 'id'+i)">
+            <div class='yylabel'><h3>{{lesson1['sug']}}</h3></div>
+            <div class='yyAud'><app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps></div>
+        </div>
+    </div>
+</div>
+<div class="text w3-twothird w3-panel w3-left" id="DetailsArea" yyAttrr="descriptionArea">
+    <div class="w3-row">
+        <div >
+            <label><h3>{{yyOneLesson['sug']}} {{yyOneLesson['title']}}</h3></label>
+        </div>
+    </div>
+    <div class="w3-row ">
+        <p>{{yyOneLesson['mydesc']}}</p>
+        <audio controls name="media" id="player" >
+            <source id="player12" src={{yyOneLesson["fullUrl"]}} type="audio/mp3">
+        </audio>
+    </div>
+    <div class="w3-row">
+        <p>{{yyOneLesson['text']}}</p>
+    </div>
+</div>
+        
+

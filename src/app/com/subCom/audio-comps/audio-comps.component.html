@@ -1,0 +1,6 @@
+<div class="audioComps">
+    <input #yyRangeBar type="range" step="any" value="0">&nbsp;
+    <div #yyplay class="fa" (click)="yyPlayAudio()">&#xf04b;</div>
+    <div #yyPause class="fa" (click)="yyPauseAudio()" style="display:none;">&#xf04c;</div>&nbsp;
+    <audio #yyaudio src={{srcAudio}}></audio>
+</div>

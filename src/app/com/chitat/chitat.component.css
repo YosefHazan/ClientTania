@@ -1,0 +1,99 @@
+.date {
+    background-color: #aeaeae;
+    text-align: center;
+}
+.date p {
+    display: inline;
+    background-color: rgba(225,245,254,.92);
+    /*width: 40%;*/
+    border: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+p{
+    display: inline;
+    font-size: 18px;
+}
+button{
+    display: inline;
+}
+.activRow{
+    background-color:#00FFFF;
+}
+.row h3{
+    padding-top: 8px;
+    margin-block-start: 0em;
+}
+#DetailsArea{
+    background-color:white !important;/*TODO: is need important*/
+    margin: 0px;
+    padding: 0px;
+}
+/* #\0024yyRangeBar == #$yyRangeBar 
+#\0024yyRangeBar{
+    direction:ltr;
+}
+*/
+#linkWhatapp{
+    text-decoration: none;
+}
+#row-whatsapp{
+    background-color:#25D366;
+    height: 35px !important;
+    padding-top:5px;
+    padding-right:5px;
+}
+.row.activRow app-audio-comps{
+    display: inline-block;
+}
+.row app-audio-comps{
+    display:none;
+}
+.lesson{
+    height: 54px;
+}
+.lesson > div{
+    display: inline-block;
+}
+.yylabel{
+    float: right;
+}
+.yyAud{
+    float: left;
+    margin-top:11px;
+}
+audio{
+    display:none;
+}
+@media screen and (min-width:601px) and (max-width:664px){
+    .row{
+        height: 80px;
+        padding-top:0px;
+    }
+    .row h3{
+        padding-top: 0px;
+    }
+    .row.activRow{
+        height: 110px;
+        padding-bottom: -18px;
+    }
+    .yyAud{
+        margin-top:-11px;
+    }
+}
+@media screen and (min-width:665px) and (max-width:1040px){
+    .row{
+        height: 46px;
+        padding-top:0px;
+    }
+    .row h3{
+        padding-top: 0px;
+    }
+    .row.activRow{
+        height: 80px;
+        padding-bottom: 2px;
+    }
+    .yyAud{
+        margin-top:5px;
+    }
+}

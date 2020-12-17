@@ -1,0 +1,43 @@
+<!--div>
+  <panel search
+    <input id="autocomplate" type="text" (keyup)="onKey($event)">
+    <label for="autocomplate">:חיפוש שיעור</label>
+    <h2>תוצאות החיפוש</h2>
+    <div *ngIf="Lessons">
+      {{nameToReq}} :
+    </div>
+  </div> -->
+  <div id="theList" class="w3-third w3-right">
+    <h2>רשימת השיעורים המלאה</h2>
+    <h5 style="background-color:#25D366" >
+      לקבלת שיעורים חדשים לווצאפ
+      <a href="https://chat.whatsapp.com/FZjM4iESdL71p7uctLrN3M">לחצו כאן</a>
+    </h5>
+       <!--span style='font-size:100px;'>&#128488;</span-->
+    
+      <div class="row"  
+        *ngFor='let category of TablesName; let ii = index' >
+        <label (click)="yyCalToMidrashaByTable(('id'+ ii), category['Url'])" [id]="'id'+ ii">
+            <h3>{{category['Name']}}</h3>
+        </label>
+      </div>
+    
+  </div> 
+  <div class="w3-twothird" yyAttrr="descriptionArea">
+    <table id="lesson" style="text-align: right !important;">
+      <tr>
+        <th class="cell-table index"> </th>
+        <th class="cell-table-big">שם השיעור</th>
+        <th class="cell-table-big">פרטים</th>
+        <th class="cell-table-big type">לינק</th>
+      </tr>
+      <tr class="row-table yyAllLessons" *ngFor="let item of AllLessons; let i = index">
+        <td class="cell-table index"> {{i+1}} </td>
+        <td class="cell-table-big type">{{item["title"]}} {{item["MyDesc"]}} {{item["Text"]}}</td>
+        <td class="cell-table-big type">{{item["parasha"]}} {{item["humash"]}} {{item["cheleck"]}}</td>
+        <td class="cell-table-big"><a href="{{item['audio']}}" target="_blank"> {{item['audio']}}</a></td>
+      </tr>
+    </table>
+  </div>
+  
+  

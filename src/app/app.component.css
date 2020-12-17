@@ -1,0 +1,54 @@
+.row{
+    border-top: solid 1px black;
+}
+#cotar-nav{
+    margin: 0% !important;
+}
+img{
+    width: 70px;
+}
+#cotar-nav > a{
+    text-decoration: none;
+}
+#MainLogo{
+    height: 50px;
+    width: 50px;
+    margin: 19px 5px;
+
+    text-shadow: 11px 16px 12px black;
+}
+#cotar-nav h5{
+    margin-bottom: 0px;
+    margin-top: 16px;
+}
+@media screen and (min-width:600px){
+    #yyRout{
+        background-color: #dadada !important;
+    }
+}
+@media screen and (max-width:600px){
+    a{
+        margin: 1px;
+        padding: 1px;
+    }
+    nav{
+        margin: 0px;
+        padding: 0px;
+    }
+    img{
+        width:35px;
+        height:35px;
+        margin-top: 13px;
+    }
+    h5{
+        font-size:15px;
+    }
+    #cotar-nav{
+        display: none;
+    }
+}
+
+/*try*/
+app-buy-books, app-buy-lectures{
+    background-color: white;
+}
