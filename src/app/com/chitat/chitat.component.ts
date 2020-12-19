@@ -19,11 +19,10 @@ export class ChitatComponent implements OnInit {
   ngOnInit() {
     //document.getElementById('showDate').innerHTML=(new HeDate).toString();
 
-    console.log("ngOnInit comp - show-lesson");
+    console.log("ngOnInit comp - chitat");
     this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
-      document.getElementById('player').setAttribute( 'src',this.yyOneLesson['fullUrl']);
       this.getSrcAudio = this.yyOneLesson['fullUrl'];
 
       this.AllLessons.forEach(elm => {
@@ -69,8 +68,7 @@ export class ChitatComponent implements OnInit {
 
     //muve leesons
     this.yyOneLesson = yyindex;
-    document.getElementById('player').setAttribute( 'src',this.yyOneLesson['fullUrl']);
-    console.log("this.yyOneLesson['audio'] : " + this.yyOneLesson['fullUrl']);
+    console.log("this.yyOneLesson['fullUrl'] : " + this.yyOneLesson['fullUrl']);
     this.getSrcAudio = this.yyOneLesson['fullUrl'];
   }
   PlayLesson(){
