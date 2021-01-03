@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule} from '@angular/router';
+//import {}
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,8 @@ import { AudioCompsComponent } from './com/subCom/audio-comps/audio-comps.compon
 import { BuyLecturesComponent } from './com/buy-lectures/buy-lectures.component';
 import { ChitatComponent } from './com/chitat/chitat.component';
 import { MidrashaComponent } from './com/midrasha/midrasha.component';
+import { SreachCompsComponent } from './com/subCom/sreach-comps/sreach-comps.component';
+import { HomeCompsComponent } from './com/subCom/home-comps/home-comps.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,14 @@ import { MidrashaComponent } from './com/midrasha/midrasha.component';
     AudioCompsComponent,
     BuyLecturesComponent,
     ChitatComponent,
-    MidrashaComponent
+    MidrashaComponent,
+    SreachCompsComponent,
+    HomeCompsComponent
   ],
   imports: [
-    FormsModule,
+    RouterModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

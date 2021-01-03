@@ -8,35 +8,31 @@
       </a>
     </h3>
     <nav class="w3-center">
-      <a class="w3-bar-item w3-button testbtn" routerLink="/chitat" routerLinkActive="active" (click)="yyChitatComponent()">
+      <a class="w3-bar-item w3-button testbtn" routerLink="chitat" routerLinkActive="active" (click)="yyChitatComponent()">
         <img src="//tanyayomi.com/yy/icons/tab_Daily.png" />
         <h5 class="w3-left">חתת<br>יומי</h5>
       </a>
-      <a class="w3-bar-item w3-button testbtn" routerLink="/midrasha" routerLinkActive="active" (click)="yyMidrashaComponent()">
+      <a class="w3-bar-item w3-button testbtn" routerLink="midrasha" routerLinkActive="active" (click)="yyMidrashaComponent()">
         <img src="//tanyayomi.com/yy/icons/tab_Lesson.png" />
         <h5 class="w3-left">שיעורים</h5>
       </a>
-      <a style="display: none" class="w3-bar-item w3-button testbtn" routerLink="/midrasha-yomit" routerLinkActive="active" (click)="TurenOffLectureOrBook()">
-        <img src="//tanyayomi.com/yy/icons/tab_Lesson.png" />
-        <h5 class="w3-left">מדרשה<br>יומית</h5>
-      </a>
-      <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToBooks()" ><!--[routerLink]="RouterbuyBooks" routerLinkActive="active">-->
+      <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToBooks()"><!-- routerLink="/buyBooks" routerLinkActive="notactiv"-->
         <img src="//tanyayomi.com/yy/icons/tab_Books.png" />
         <h5 class="w3-left">ספרים<br>מומלצים</h5>
       </a>
-      <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToLectures()"><!--[routerLink]="/buyLectures" routerLinkActive="active"-->
+      <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToLectures()" ><!--routerLink="/buyLectures" routerLinkActive="active"-->
         <img src="//tanyayomi.com/yy/icons/tab_Lectures.png" />
         <h5 class="w3-left">הרצאות</h5>
       </a>
     </nav>
   </div>
-<div class="yyLeftDirection">
-  <div style="position:absolute;" class="w3-twothird">
-    <div class="yyRightDirection">
-    <app-buy-books *ngIf="this.yyRouterbuyBooks" class="w3-panel w3-left"></app-buy-books>
-    <app-buy-lectures *ngIf="this.yyRouterbuyLectures" class="w3-panel w3-left"></app-buy-lectures>
-  </div>
-  </div>
+  <div class="yyLeftDirection">
+    <div class="w3-twothird yyAbselute">
+      <div class="yyRightDirection" #popCom>
+        <app-buy-books *ngIf="this.yyRouterbuyBooks" class="w3-panel w3-left"></app-buy-books>
+        <app-buy-lectures *ngIf="this.yyRouterbuyLectures" class="w3-panel w3-left"></app-buy-lectures>
+      </div>
+    </div>
   </div>
   <div class="w3-row" id="yyRout">
     <router-outlet></router-outlet>

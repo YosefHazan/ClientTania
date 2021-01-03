@@ -1,0 +1,22 @@
+.input-icons i { 
+    /*position: absolute; */
+} 
+  
+.input-icons { 
+    width: 100%;
+    direction: ltr;
+    text-align: left;
+    padding: 10px;
+} 
+  
+.icon { 
+    padding: 10px; 
+    min-width: 40px; 
+} 
+  
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    border-radius:100px;
+text-align:right;
+} 

@@ -1,0 +1,189 @@
+<div class="w3-third w3-right"><!--TODO:COMPONNET-->
+    <div id="row-whatsapp" style="background-color:#25D366;height: 35px !important;" >
+        <a style="font-size: 24px;" id="linkWhatapp" class="fa" href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">
+        &#xf232;
+        לחצו לקבלת חת"ת יומי לווצאפ
+        </a>
+    </div>
+    <div class="date">
+        <i style="font-size:24px" class="fa">&#xf0da;</i>
+        <p id="showDate"> היום </p>
+        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <i style="font-size:24px" class="fa">&#xf0d9;</i>
+    </div>
+    <div *ngFor="let lesson1 of AllLessons; let i = index;" class="row">
+        <div class="lesson" [id]="'id'+i" (click) = "toggleDisplay(lesson1, 'id'+i)">
+            <div class='yylabel'><h3>{{lesson1['sug']}}</h3></div>
+            <div class='yyAud'><app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps></div>
+        </div>
+    </div>
+</div>
+
+    <!--    lecturs     -->
+    
+<div class="w3-twothird w3-right">
+    <h2 class="w3-right">הרצאות מומלצות</h2>
+    <div class="w3-cell w3-left">
+        <div class="w3-row">
+            <div class="w3-cell">
+                <h5>מודעות יהודית - לחיות תניא</h5>
+                <p>
+                    הרצאה שתשנה לכם את החיים
+                    בספר התניא ניתן למצוא תשובות לכל השאלות, אך כיצד מורידים זאת
+                    לחיי היום יום? בהרצאה נלמד כיצד לקחת את הרעיונות העמוקים ביותר
+                    וליישם באופן יומיומי בחינוך, זוגיות, קריירה ועוד
+                </p>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-cell">
+                <h5>מן המיצר אל המרחב</h5>
+                <p>
+                    סדנא ייחודית
+                    לכולנו יש מיצרים בחיים, אך כיצד יוצאים מהם? בסדנא זו נקבל כלים
+                    מעשיים כיצד לצאת מהמיצרים
+                </p>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-cell">
+                <h5>קיצור תניא</h5>
+                <p>
+                    בליווי מצגת
+                    הרצאה מרתקת משולבת בסיפורים רבים בה נלמד את מבנה ספר
+                    התניא וסדר העניינים, אחרי ההרצאה נוכל לגשת לכל פרק בתניא
+                    ולהבין בקלות
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="w3-third w3-right">
+        <div class="w3-left w3-round-xxlarge" id="for-Buy">
+            &nbsp;
+            להזמנות
+            &nbsp;
+            <!--span style='font-size:40px;'>&#9993;</span-->
+            9770959 - 054
+            <i class="fa fa-phone" style="font-size:30px"></i>
+        </div>
+    </div>
+
+    <!--    books     -->
+
+    <div class="w3-half">
+        <div class="w3-left w3-round-xxlarge" id="for-Buy">
+            &nbsp;
+            להזמנות
+            &nbsp;
+            <!--span style='font-size:40px;'>&#9993;</span-->
+            9770959 - 054
+            <i class="fa fa-phone" style="font-size:30px"></i>
+        </div>
+    </div>
+    <div class="w3-half">
+        <div class="w3-row">
+            <h2>ספרים מומלצים</h2> 
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%94%D7%AA%D7%A0%D7%99%D7%90-%D7%A9%D7%9C%D7%99" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book1.png" />
+                    <p>
+                        התניא שלי - ספר תניא לילדים מאוייר, מתאים לגילאי 4-9 , מדהים לראות איך הילדים ישר מתחילי לדבר בשפה של התניא (מלאי מוגבל)
+                    </p>
+                </div>
+            </a>
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%97%D7%99%D7%A0%D7%95%D7%9A-%D7%91%D7%90%D7%94%D7%91%D7%94" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book2.png" />
+                    <p>חינוך באהבה - כללי החינוך והאהבה של הרבי הריי"צ בשפה קלילה וברורה. הטיפים הכי חשובים לחינוך הילדים במיוחד בדור שלנו (מספר הספרים מוגבל)
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%A7%D7%99%D7%A6%D7%95%D7%A8-%D7%94%D7%AA%D7%A0%D7%99%D7%90-%D7%9C%D7%99%D7%A7%D7%95%D7%98%D7%99-%D7%90%D7%9E%D7%A8%D7%99%D7%9D" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book3.png" />
+                    <p>
+                        קיצור התניא - סיכום תמציתי לכל פרק בתניא, מלווה בטבלאות להקלת הבנת מהלך התניא. שלושה כרכים
+                    </p>
+                </div>
+            </a>
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%9E%D7%95%D7%93%D7%A2%D7%95%D7%AA-%D7%99%D7%94%D7%95%D7%93%D7%99%D7%AA" target="_blank">
+                <div class="image-txt-container">
+                    <img  src="//tanyayomi.com/yy/books/book4.png" />
+                    <p>
+                        מודעות יהודית -
+                         הרעיונות המרכזיים בספר התניא בשפה בהירה וקלה,
+                         הספר שעשה מהפיכה בלימוד התניא,
+                        כל אחד יכול ללמוד (וגם ללמד) תניא בקלות
+                        <br><br>
+                        **אפשר להזמין את הספר גם באנגלית או ברוסית
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%A2%D7%91%D7%93%D7%95%D7%AA-%D7%90%D7%95-%D7%A9%D7%9C%D7%99%D7%97%D7%95%D7%AA" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book5.png" />
+                    <p>
+                        עבדות או שליחות - מדריך מעשי איך למצוא את השליחות והיעוד שלכם בעולם הזה, ולא פחות חשוב מה לעשות כדי להצליח לממש אותם
+                    </p>
+                </div>
+            </a>
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/ibelive-%D7%9B%D7%9C-%D7%9E%D7%94-%D7%A9%D7%A8%D7%A6%D7%99%D7%AA-%D7%9C%D7%A9%D7%90%D7%95%D7%9C" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book6.png" />
+                    <p>איי בליב - כל מה שרצית לשאול. צ'אט מרתק בין אח ואחות, האח חזר בתשובה ועכשיו עונה על השאלות באמונה שאחותו שואלת. מתאים במיוחד לצעירים שלא מתביישים לשאול שאלות וגם לכל מי שרוצה לדעת מה לענות להם
+                    </p>
+                </div>
+            </a>        
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%94%D7%A9%D7%9E%D7%97%D7%94-%D7%95%D7%94%D7%AA%D7%A8%D7%A0%D7%92%D7%95%D7%9C%D7%AA" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book7.png" />
+                    <p>
+                        השמחה והתרנגולת - ארבעים קטעים מתורתו של הרבי בנושא שמחה, אחרי הספר הזה כבר לא תוכלו להיות עצובים. כל הספר מאוייר וצבעוני, אי אפשר שלא לפתוח אותו
+                    </p>
+                </div>
+            </a>
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%94%D7%AA%D7%A9%D7%95%D7%91%D7%94-%D7%91%D7%94%D7%95%D7%93%D7%95" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book8.png" />
+                    <p>התשובה בהודו - סיפור תשובה מרתק של צעיר ישראלי תוך כדי מסע רוחני בהודו, הסיפור של אלפים בדור שלנו שחזרו בתשובה
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%93%D7%99%D7%91%D7%95%D7%A8-%D7%94%D7%9E%D7%AA%D7%97%D7%99%D7%9C" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book9.png" />
+                    <p>
+                        דיבור המתחיל - 12 מאמרים נבחרים שלך הרבי מליובאוויטש בשפה פשוטה שכל אחד יכול להבין, קוראים ומקבלים כוחות לעבור את הניסיונות האחרונים של הגלות
+                    </p>
+                </div>
+            </a>
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F/products/%D7%9E%D7%95%D7%93%D7%A2%D7%95%D7%AA-%D7%99%D7%94%D7%95%D7%93%D7%99%D7%AA-%D7%90%D7%A0%D7%92%D7%9C%D7%99%D7%AA" target="_blank">
+                <div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book10.png" />
+                    <p>מודעות יהודית באנגלית GPS FOR THE SOUL
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="w3-row-padding">
+            <a class="yy-cell" href="https://chabadshop.com/collections/%D7%A1%D7%A4%D7%A8%D7%99-%D7%94%D7%A8%D7%91-%D7%A0%D7%93%D7%91-%D7%9B%D7%94%D7%9F" target="_blank">
+                <!--div class="image-txt-container">
+                    <img src="//tanyayomi.com/yy/books/book9.png" />
+                    <p-->
+                        למעבר לעוד ספרים לחצו כאן
+                    <!--/p>
+                </div-->
+            </a>
+        </div>
+    </div>

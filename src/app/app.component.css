@@ -52,3 +52,7 @@ img{
 app-buy-books, app-buy-lectures{
     background-color: white;
 }
+
+.yyAbselute{
+    position: absolute;
+}

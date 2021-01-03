@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, Output} from '@angular/core';
+import { Component, Input, Output,ElementRef, ViewChild} from '@angular/core';
 //import { Router } from '@angular/router';
 //import { BuyLecturesComponent} from './com/buy-lectures/buy-lectures.component';
 //import { BuyBooksComponent} from './com/buy-Books/buy-Books.component';
@@ -9,10 +9,14 @@ import { Component, ViewEncapsulation, Input, Output} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild("popCom") elmToDown: ElementRef;
   public yyRouterbuyBooks:boolean = false;
   public yyRouterbuyLectures:boolean = false;
-  public yyTypeLessonsActived:string;
+  public yyTypeLessonsActived:string = "chitat";
   constructor(){}
+  ngOnInit(){
+    this.fixCssForSells();
+  }
   yyChitatComponent()
   {
     this.TurenOffLectureOrBook();
@@ -46,8 +50,7 @@ export class AppComponent {
     console.log("turn off");
     this.yyRouterbuyBooks = false;
     this.yyRouterbuyLectures = false;
-    elmToHide = document.querySelector('[yyAttrr="descriptionArea"]');
-    elmToHide.style.display = 'block';
+    eval("document.querySelector('#descriptionArea').style.display = 'block'");
   
     //fix position of sells description
     elmToDown = document.querySelector('.yyRightDirection');
@@ -55,16 +58,11 @@ export class AppComponent {
   }
   fixCssForSells()
   {
+    let pixelsToDown;
     let elmToHide;
-    var elmToDown;
-    var pixelsToDown;
-
-    //hide element in background
-    elmToHide = document.querySelector('[yyAttrr="descriptionArea"]');
-    elmToHide.style.display = 'none';
+    eval("document.querySelector('#descriptionArea').style.display = 'none'");
     
     //fix position of sells description
-    elmToDown = document.querySelector('.yyRightDirection');
     if(screen.width <= 600 && this.yyTypeLessonsActived.includes("chitat"))
     {
       pixelsToDown = "378px";
@@ -73,6 +71,6 @@ export class AppComponent {
     {
       pixelsToDown = "598px";
     }
-    elmToDown.style.marginTop = pixelsToDown;
+    this.elmToDown.nativeElement.style.marginTop = pixelsToDown;
   }
 }
