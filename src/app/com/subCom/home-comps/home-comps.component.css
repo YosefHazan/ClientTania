@@ -31,9 +31,6 @@ button{
     margin: 0px;
     padding: 0px;
 }
-#descriptionArea p{
-    white-space: pre-wrap;
-}
 /* #\0024yyRangeBar == #$yyRangeBar 
 #\0024yyRangeBar{
     direction:ltr;

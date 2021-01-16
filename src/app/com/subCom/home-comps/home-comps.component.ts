@@ -36,11 +36,9 @@ export class HomeCompsComponent implements OnInit {
               break;
               case 'c':
                 elm['sug'] = "חומש";
-                elm['text'] = elm['text'].replaceAll(":",": \n");
             break;
           case 'p':
             elm['sug'] = "תהילים";
-            elm['text'] = elm['text'].replaceAll("פרק","\nפרק");
             break;
           case 'r':
           case 'r1':
