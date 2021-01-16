@@ -6,11 +6,17 @@
         לחצו לקבלת חת"ת יומי לווצאפ
         </a>
     </div>
-    <div class="date">
-        <i style="font-size:24px" class="fa">&#xf0da;</i>
-        <p id="showDate"> היום </p>
-        <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        <i style="font-size:24px" class="fa">&#xf0d9;</i>
+    <div class="date w3-row">
+        <div class="w3-third w3-cell w3-left">
+            <i style="font-size:24px" class="fa">&#xf0d9;</i>
+        </div>
+        <div class="w3-cell w3-center w3-third">
+            <p id="showDate"> היום </p>
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        </div>
+        <div class="w3-third w3-cell w3-right">
+            <i style="font-size:24px" class="fa">&#xf0da;</i>
+        </div>
     </div>
     <div *ngFor="let lesson1 of AllLessons; let i = index;" class="row">
         <div class="lesson" [id]="'id'+i" (click) = "toggleDisplay(lesson1, 'id'+i)">
