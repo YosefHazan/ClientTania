@@ -31,16 +31,16 @@ export class HomeCompsComponent implements OnInit {
           case 't':
             elm['sug'] = "תניא";
             break;
-          case 'y':
-            elm['sug'] = "יום יום";
-            break;
-          case 'c':
-            elm['sug'] = "חומש";
-            //TODO: put before "()" -> <br>
+            case 'y':
+              elm['sug'] = "יום יום";
+              break;
+              case 'c':
+                elm['sug'] = "חומש";
+                elm['text'] = elm['text'].replaceAll(":",": \n");
             break;
           case 'p':
             elm['sug'] = "תהילים";
-            //TODO: put before "פרק" -> <br>
+            elm['text'] = elm['text'].replaceAll("פרק","\nפרק");
             break;
           case 'r':
           case 'r1':
