@@ -1,3 +1,5 @@
+/*tania*/
+
 .date {
     background-color: #aeaeae;
     text-align: center;
@@ -97,9 +99,10 @@ audio{
         margin-top:5px;
     }
 }
+
 /*here is lectures*/
 
-img{width:100px;}
+img{width:100%;}
 h5{
     font-weight: bold;
 }
@@ -117,7 +120,7 @@ h5{
     align-items:center;
     flex-direction: row;
     float: right;
-    margin: 10px;
+    margin: 2px;
 }
 .image-txt-container p{
     display: none;
@@ -139,11 +142,21 @@ h5{
     p{
         width: 50% !important;
     }
-    .yy-cell{
-        display: block;
+}
+@media screen and (min-width:600px){
+    #yybackground > div{
+        background-color: white !important;
+        height: 825px;
     }
 }
 
-#yybackground div{
-    background-color: white !important;
+/*specific img*/
+img[src="//tanyayomi.com/yy/books/book5.png"], img[src="//tanyayomi.com/yy/books/book4.png"], img[src="//tanyayomi.com/yy/books/book1.png"]{
+    width: 110%;
+}
+img[src="//tanyayomi.com/yy/books/book3.png"],img[src="//tanyayomi.com/yy/books/book9.png"]{
+    width: 93% ;
+}
+#yybackground > div:nth-child(2) > div > div:nth-child(3) > a:nth-child(2) > div{
+    margin: 0 13px 0 2px;
 }
