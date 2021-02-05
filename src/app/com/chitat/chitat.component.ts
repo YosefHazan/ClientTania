@@ -13,7 +13,7 @@ export class ChitatComponent implements OnInit {
   public yyOneLesson:any;
   public yyaudio:HTMLAudioElement;
   public getSrcAudio:string;
-  
+  public SaveUserChoiseDate:number = 0;
   constructor(private ReqSer: CallToChitatService) { }
 
   ngOnInit() {
@@ -31,15 +31,13 @@ export class ChitatComponent implements OnInit {
             elm['sug'] = "תניא";
             break;
           case 'y':
-            elm['sug'] = "יום יום";
-            break;
+              elm['sug'] = "יום יום";
+              break;
           case 'c':
-            elm['sug'] = "חומש";
-            //TODO: put before "()" -> <br>
+                elm['sug'] = "חומש";
             break;
           case 'p':
             elm['sug'] = "תהילים";
-            //TODO: put before "פרק" -> <br>
             break;
           case 'r':
           case 'r1':
@@ -78,5 +76,75 @@ export class ChitatComponent implements OnInit {
   }
   PouseLesson(){
     this.yyaudio.pause();
+  }
+  nextDate(){
+    this.SaveUserChoiseDate++;
+    this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
+      this.AllLessons = data;
+      this.yyOneLesson = data[0];
+      this.getSrcAudio = this.yyOneLesson['fullUrl'];
+
+      this.AllLessons.forEach(elm => {
+        switch (elm['sug']) {
+          case 't':
+            elm['sug'] = "תניא";
+            break;
+          case 'y':
+              elm['sug'] = "יום יום";
+              break;
+          case 'c':
+                elm['sug'] = "חומש";
+            break;
+          case 'p':
+            elm['sug'] = "תהילים";
+            break;
+          case 'r':
+          case 'r1':
+            elm['sug'] = 'רמב"ם פרק אחד';
+            break;
+          case 'r3':
+            elm['sug'] = 'רמב"ם שלשה פרקים';
+            break;
+          default:
+            elm['sug'] =" ";
+            break;
+        }
+      });
+    });
+  }
+  PreviusDate(){
+    this.SaveUserChoiseDate--;
+    this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
+      this.AllLessons = data;
+      this.yyOneLesson = data[0];
+      this.getSrcAudio = this.yyOneLesson['fullUrl'];
+
+      this.AllLessons.forEach(elm => {
+        switch (elm['sug']) {
+          case 't':
+            elm['sug'] = "תניא";
+            break;
+          case 'y':
+              elm['sug'] = "יום יום";
+              break;
+          case 'c':
+                elm['sug'] = "חומש";
+            break;
+          case 'p':
+            elm['sug'] = "תהילים";
+            break;
+          case 'r':
+          case 'r1':
+            elm['sug'] = 'רמב"ם פרק אחד';
+            break;
+          case 'r3':
+            elm['sug'] = 'רמב"ם שלשה פרקים';
+            break;
+          default:
+            elm['sug'] =" ";
+            break;
+        }
+      });
+    });
   }
 }

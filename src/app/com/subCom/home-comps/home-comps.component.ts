@@ -14,14 +14,14 @@ export class HomeCompsComponent implements OnInit {
   public yyOneLesson:any;
   public yyaudio:HTMLAudioElement;
   public getSrcAudio:string;
-  
+  public SaveUserChoiseDate:number = 0;
   constructor(private ReqSer: CallToChitatService) { }
 
   ngOnInit() {
     //document.getElementById('showDate').innerHTML=(new HeDate).toString();
 
     console.log("ngOnInit comp - chitat");
-    this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
+    this.callObservable = this.ReqSer.getNotTodayLessons(-1).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
       this.getSrcAudio = this.yyOneLesson['fullUrl'];
@@ -31,10 +31,10 @@ export class HomeCompsComponent implements OnInit {
           case 't':
             elm['sug'] = "תניא";
             break;
-            case 'y':
+          case 'y':
               elm['sug'] = "יום יום";
               break;
-              case 'c':
+          case 'c':
                 elm['sug'] = "חומש";
             break;
           case 'p':
@@ -77,5 +77,75 @@ export class HomeCompsComponent implements OnInit {
   }
   PouseLesson(){
     this.yyaudio.pause();
+  }
+  nextDate(){
+    this.SaveUserChoiseDate++;
+    this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
+      this.AllLessons = data;
+      this.yyOneLesson = data[0];
+      this.getSrcAudio = this.yyOneLesson['fullUrl'];
+
+      this.AllLessons.forEach(elm => {
+        switch (elm['sug']) {
+          case 't':
+            elm['sug'] = "תניא";
+            break;
+          case 'y':
+              elm['sug'] = "יום יום";
+              break;
+          case 'c':
+                elm['sug'] = "חומש";
+            break;
+          case 'p':
+            elm['sug'] = "תהילים";
+            break;
+          case 'r':
+          case 'r1':
+            elm['sug'] = 'רמב"ם פרק אחד';
+            break;
+          case 'r3':
+            elm['sug'] = 'רמב"ם שלשה פרקים';
+            break;
+          default:
+            elm['sug'] =" ";
+            break;
+        }
+      });
+    });
+  }
+  PreviusDate(){
+    this.SaveUserChoiseDate--;
+    this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
+      this.AllLessons = data;
+      this.yyOneLesson = data[0];
+      this.getSrcAudio = this.yyOneLesson['fullUrl'];
+
+      this.AllLessons.forEach(elm => {
+        switch (elm['sug']) {
+          case 't':
+            elm['sug'] = "תניא";
+            break;
+          case 'y':
+              elm['sug'] = "יום יום";
+              break;
+          case 'c':
+                elm['sug'] = "חומש";
+            break;
+          case 'p':
+            elm['sug'] = "תהילים";
+            break;
+          case 'r':
+          case 'r1':
+            elm['sug'] = 'רמב"ם פרק אחד';
+            break;
+          case 'r3':
+            elm['sug'] = 'רמב"ם שלשה פרקים';
+            break;
+          default:
+            elm['sug'] =" ";
+            break;
+        }
+      });
+    });
   }
 }

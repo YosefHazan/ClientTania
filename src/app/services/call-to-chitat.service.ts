@@ -23,4 +23,19 @@ export class CallToChitatService {
       return obj;
     }));
   };
+
+  public getNotTodayLessons(byAfterOrBefore):Observable<any> 
+  {
+    let ydate = new Date();
+    ydate.setDate(ydate.getDate() + byAfterOrBefore);
+    const url = this.yyMyHost + 'yy/yyGetToday.php?day=' + formatDate(ydate, 'yyyy-MM-dd', 'en');
+    console.log('cal to url ' + url);
+    return this.http.get(url).pipe(map((obj)=>
+    { 
+      //return this.ajax().pipe(map((obj)=>{ 
+      //console.log('mapping start ' );
+      console.log('mapping end with : ' + obj);
+      return obj;
+    }));
+  };
 }

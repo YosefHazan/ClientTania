@@ -4,8 +4,6 @@
 }
 .date p {
     display: inline;
-    background-color: rgba(225,245,254,.92);
-    /*width: 40%;*/
     border: 5px;
     border-radius: 5px;
     margin: 10px;
@@ -25,9 +23,12 @@ button{
     margin-block-start: 0em;
 }
 #DetailsArea{
-    background-color:white !important;/*TODO: is need important*/
+    background-color:white !important;/*TODO: is need important?*/
     margin: 0px;
     padding: 0px;
+}
+#descriptionArea p{
+    white-space: pre-wrap;
 }
 /* #\0024yyRangeBar == #$yyRangeBar 
 #\0024yyRangeBar{
