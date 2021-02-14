@@ -20,7 +20,6 @@ export class HomeCompsComponent implements OnInit {
   ngOnInit() {
     //document.getElementById('showDate').innerHTML=(new HeDate).toString();
 
-    console.log("ngOnInit comp - chitat");
     this.callObservable = this.ReqSer.getNotTodayLessons(-1).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
@@ -67,7 +66,6 @@ export class HomeCompsComponent implements OnInit {
 
     //muve leesons
     this.yyOneLesson = yyindex;
-    console.log("this.yyOneLesson['fullUrl'] : " + this.yyOneLesson['fullUrl']);
     this.getSrcAudio = this.yyOneLesson['fullUrl'];
   }
   PlayLesson(){

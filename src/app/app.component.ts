@@ -1,7 +1,4 @@
-import { Component, Input, Output,ElementRef, ViewChild} from '@angular/core';
-//import { Router } from '@angular/router';
-//import { BuyLecturesComponent} from './com/buy-lectures/buy-lectures.component';
-//import { BuyBooksComponent} from './com/buy-Books/buy-Books.component';
+import { Component, Input, Output, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',

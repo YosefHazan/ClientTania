@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output} from '@angular/core';
 import { CallToChitatService } from '../../services/call-to-chitat.service';
+import {HebrewDateService} from '../../services/hebrew-date.service';
 
 @Component({
   selector: 'app-chitat',
@@ -14,12 +15,14 @@ export class ChitatComponent implements OnInit {
   public yyaudio:HTMLAudioElement;
   public getSrcAudio:string;
   public SaveUserChoiseDate:number = 0;
-  constructor(private ReqSer: CallToChitatService) { }
+  constructor(private ReqSer: CallToChitatService, private Hdate:HebrewDateService) { }
 
   ngOnInit() {
     //document.getElementById('showDate').innerHTML=(new HeDate).toString();
-
+    let yDate = new Date();
+    
     console.log("ngOnInit comp - chitat");
+    console.log("yosef : " + JSON.stringify(this.Hdate.module(yDate.getFullYear(),yDate.getMonth(), yDate.getDate())));//TODO:Not work!
     this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
