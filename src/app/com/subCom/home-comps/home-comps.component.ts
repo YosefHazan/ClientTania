@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output} from '@angular/core';
+import { fullHebrewDate } from 'src/app/classes/fullHebrewDate';
+import { HebrewDateService } from 'src/app/services/hebrew-date.service';
 import { CallToChitatService } from '../../../services/call-to-chitat.service';
 
 @Component({
@@ -15,12 +17,15 @@ export class HomeCompsComponent implements OnInit {
   public yyaudio:HTMLAudioElement;
   public getSrcAudio:string;
   public SaveUserChoiseDate:number = 0;
-  constructor(private ReqSer: CallToChitatService) { }
-
+  public currentHebrewDate:fullHebrewDate;
+  public yDate:any = new Date();
+  constructor(private ReqSer: CallToChitatService, private Hdate:HebrewDateService) { }
+  
   ngOnInit() {
-    //document.getElementById('showDate').innerHTML=(new HeDate).toString();
-
-    this.callObservable = this.ReqSer.getNotTodayLessons(-1).subscribe(data => {
+    console.log("ngOnInit comp - chitat");
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, this.yDate.getDate());
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
+    this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
       this.getSrcAudio = this.yyOneLesson['fullUrl'];
@@ -78,6 +83,8 @@ export class HomeCompsComponent implements OnInit {
   }
   nextDate(){
     this.SaveUserChoiseDate++;
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, (this.yDate.getDate() + this.SaveUserChoiseDate));
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
     this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
@@ -113,6 +120,8 @@ export class HomeCompsComponent implements OnInit {
   }
   PreviusDate(){
     this.SaveUserChoiseDate--;
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, (this.yDate.getDate() + this.SaveUserChoiseDate));
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
     this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];

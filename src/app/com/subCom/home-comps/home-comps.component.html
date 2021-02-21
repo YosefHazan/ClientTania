@@ -11,7 +11,7 @@
             <i style="font-size:24px" class="fa">&#xf0d9;</i>
         </div>
         <div class="w3-cell w3-center w3-third" id="HebrewDate">
-            <p id="showDate"> היום </p>
+            <p id="showDate"> {{this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter}}</p>
             <i class="fa fa-calendar-o" aria-hidden="true"></i>
         </div>
         <div class="w3-third w3-cell w3-right" id="rightArrow" (click)="PreviusDate();">

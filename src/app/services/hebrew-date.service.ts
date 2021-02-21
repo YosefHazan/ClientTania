@@ -60,7 +60,7 @@ export class HebrewDateService {
   private yyHebrewYear = "";
   private yyHelp;
   private DayInWeekName = "";
-  private isMeuberetYear = false;
+  private isMeuberetYear:boolean = false;
   private metonicCycle = 0;
   private metonicYear = 0;
   private moladDay = 0;
@@ -69,7 +69,6 @@ export class HebrewDateService {
   constructor(){}
 
   module(inputDateOrYear, inputMonth, inputDate) {
-    
     let inputYear = inputDateOrYear;
 
     if (typeof inputYear === "object") {
@@ -219,81 +218,82 @@ export class HebrewDateService {
     tishri1 = this.Tishri1(this.metonicYear, this.moladDay, this.moladHalakim);
 
     if (inputDay >= tishri1) {
-        // It found Tishri 1 at the start of the year.
-        this.hebrewYear = this.metonicCycle * 19 + this.metonicYear + 1;
-        if (inputDay < tishri1 + 59) {
-            if (inputDay < tishri1 + 30) {
-              this.hebrewMonth = 1;
-              this.hebrewDate = inputDay - tishri1 + 1;
-            } else {
-              this.hebrewMonth = 2;
-              this.hebrewDate = inputDay - tishri1 - 29;
-            }
-            return;
-        }
-        // We need the length of the year to figure this out,so find Tishri 1 of the next year.
-        this.moladHalakim += this.HALAKIM_PER_LUNAR_CYCLE * this.mpy[this.metonicYear];
-        this.moladDay += Math.floor(this.moladHalakim / this.HALAKIM_PER_DAY);
-        this.moladHalakim = this.moladHalakim % this.HALAKIM_PER_DAY;
-        tishri1After = this.Tishri1((this.metonicYear + 1) % 19, this.moladDay, this.moladHalakim);
-    } else {
-        // It found Tishri 1 at the end of the year.
-        this.hebrewYear = this.metonicCycle * 19 + this.metonicYear;
-        if (inputDay >= tishri1 - 177) {
-            // It is one of the last 6 months of the year.
-            if (inputDay > tishri1 - 30) {
-              this.hebrewMonth = 13;
-              this.hebrewDate = inputDay - tishri1 + 30;
-            } else if (inputDay > tishri1 - 60) {
-              this.hebrewMonth = 12;
-              this.hebrewDate = inputDay - tishri1 + 60;
-            } else if (inputDay > tishri1 - 89) {
-              this.hebrewMonth = 11;
-              this.hebrewDate = inputDay - tishri1 + 89;
-            } else if (inputDay > tishri1 - 119) {
-              this.hebrewMonth = 10;
-              this.hebrewDate = inputDay - tishri1 + 119;
-            } else if (inputDay > tishri1 - 148) {
-              this.hebrewMonth = 9;
-              this.hebrewDate = inputDay - tishri1 + 148;
-            } else {
-              this.hebrewMonth = 8;
-              this.hebrewDate = inputDay - tishri1 + 178;
-            }
-            return;
+      // It found Tishri 1 at the start of the year.
+      this.hebrewYear = this.metonicCycle * 19 + this.metonicYear + 1;
+      if (inputDay < tishri1 + 59) {
+        if (inputDay < tishri1 + 30) {
+          this.hebrewMonth = 1;
+          this.hebrewDate = inputDay - tishri1 + 1;
         } else {
-            if (this.mpy[(this.hebrewYear - 1) % 19] == 13) {
-              this.isMeuberetYear = true;
-              this.hebrewMonth = 7;
-              this.hebrewDate = inputDay - tishri1 + 207;
-                if (this.hebrewDate > 0)
-                    return;
-                    this.hebrewMonth--;
-                    this.hebrewDate += 30;
-                if (this.hebrewDate > 0)
-                    return;
-                    this.hebrewMonth--;
-                    this.hebrewDate += 30;
-            } else {
-              this.hebrewMonth = 6;
-              this.hebrewDate = inputDay - tishri1 + 207;
-                if (this.hebrewDate > 0)
-                    return;
-                    this.hebrewMonth--;
-                    this.hebrewDate += 30;
-            }
-            if (this.hebrewDate > 0)
-                return;
-                this.hebrewMonth--;
-                this.hebrewDate += 29;
-            if (this.hebrewDate > 0)
-                return;
-            // We need the length of the year to figure this out,so find Tishri 1 of this year.
-            tishri1After = tishri1;
-            this.FindTishriMolad(this.moladDay - 365);
-            tishri1 = this.Tishri1(this.metonicYear, this.moladDay, this.moladHalakim);
+          this.hebrewMonth = 2;
+          this.hebrewDate = inputDay - tishri1 - 29;
         }
-    }
+        return;
+      }
+
+      // We need the length of the year to figure this out,so find Tishri 1 of the next year.
+      this.moladHalakim += this.HALAKIM_PER_LUNAR_CYCLE * this.mpy[this.metonicYear];
+      this.moladDay += Math.floor(this.moladHalakim / this.HALAKIM_PER_DAY);
+      this.moladHalakim = this.moladHalakim % this.HALAKIM_PER_DAY;
+      tishri1After = this.Tishri1((this.metonicYear + 1) % 19, this.moladDay, this.moladHalakim);
+    } else {
+      // It found Tishri 1 at the end of the year.
+      this.hebrewYear = this.metonicCycle * 19 + this.metonicYear;
+      if (inputDay >= tishri1 - 177) {
+        // It is one of the last 6 months of the year.
+        if (inputDay > tishri1 - 30) {
+          this.hebrewMonth = 13;
+          this.hebrewDate = inputDay - tishri1 + 30;
+        } else if (inputDay > tishri1 - 60) {
+          this.hebrewMonth = 12;
+          this.hebrewDate = inputDay - tishri1 + 60;
+        } else if (inputDay > tishri1 - 89) {
+          this.hebrewMonth = 11;
+          this.hebrewDate = inputDay - tishri1 + 89;
+        } else if (inputDay > tishri1 - 119) {
+          this.hebrewMonth = 10;
+          this.hebrewDate = inputDay - tishri1 + 119;
+        } else if (inputDay > tishri1 - 148) {
+          this.hebrewMonth = 9;
+          this.hebrewDate = inputDay - tishri1 + 148;
+        } else {
+          this.hebrewMonth = 8;
+          this.hebrewDate = inputDay - tishri1 + 178;
+        }
+         return;
+      } else {
+        if (this.mpy[(this.hebrewYear - 1) % 19] == 13) {
+          this.isMeuberetYear = true;
+          this.hebrewMonth = 7;
+          this.hebrewDate = inputDay - tishri1 + 207;
+          if (this.hebrewDate > 0)
+            return;
+          this.hebrewMonth--;
+          this.hebrewDate += 30;
+          if (this.hebrewDate > 0)
+            return;
+          this.hebrewMonth--;
+          this.hebrewDate += 30;
+        } else {
+          this.hebrewMonth = 6;
+          this.hebrewDate = inputDay - tishri1 + 207;
+          if (this.hebrewDate > 0)
+            return;
+          this.hebrewMonth--;
+          this.hebrewDate += 30;
+        }
+        if (this.hebrewDate > 0)
+          return;
+        this.hebrewMonth--;
+        this.hebrewDate += 29;
+        if (this.hebrewDate > 0)
+          return;
+        // We need the length of the year to figure this out,so find Tishri 1 of this year.
+        tishri1After = tishri1;
+        this.FindTishriMolad(this.moladDay - 365);
+        tishri1 = this.Tishri1(this.metonicYear, this.moladDay, this.moladHalakim);
+        }
+      }
     yearLength = tishri1After - tishri1;
     this.moladDay = inputDay - tishri1 - 29;
         if (yearLength == 355 || yearLength == 385) {
@@ -345,25 +345,5 @@ export class HebrewDateService {
         break;
     }
   }
-
-  /**
- * hebrewDate
- * Convert the Gregorian dates  into Hebrew calendar dates.
- *
- * @name hebrewDate
- * @function
- * @param {Date|Number} inputDate The date object (representing the Gregorian date) or the year.
- * @param {Number} inputMonth The Gregorian month (**one-indexed**, January being `1`!).
- * @param {Number} inputDate The Gregorian date.
- * @return {Object} An object containing:
- *
- *  - `year`: The Hebrew year.
- *  - `month`: The Hebrew month.
- *  - `month_name`: The Hebrew month name.
- *  - `date`: The Hebrew date.
- *  - `hHHebrewMonth` : The Hebrew date in Hebrew latter 
- */
-  //module.exports = function (inputDateOrYear, inputMonth, inputDate) {
-
-    
 }
+

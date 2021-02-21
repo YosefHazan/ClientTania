@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output} from '@angular/core';
+import { fullHebrewDate } from 'src/app/classes/fullHebrewDate';
 import { CallToChitatService } from '../../services/call-to-chitat.service';
 import {HebrewDateService} from '../../services/hebrew-date.service';
 
@@ -15,14 +16,14 @@ export class ChitatComponent implements OnInit {
   public yyaudio:HTMLAudioElement;
   public getSrcAudio:string;
   public SaveUserChoiseDate:number = 0;
+  public currentHebrewDate:fullHebrewDate;
+  public yDate:any = new Date();
   constructor(private ReqSer: CallToChitatService, private Hdate:HebrewDateService) { }
 
-  ngOnInit() {
-    //document.getElementById('showDate').innerHTML=(new HeDate).toString();
-    let yDate = new Date();
-    
+  ngOnInit() {    
     console.log("ngOnInit comp - chitat");
-    console.log("yosef : " + JSON.stringify(this.Hdate.module(yDate.getFullYear(),yDate.getMonth(), yDate.getDate())));//TODO:Not work!
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, this.yDate.getDate());
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
     this.callObservable = this.ReqSer.getTodayLessons().subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
@@ -82,6 +83,8 @@ export class ChitatComponent implements OnInit {
   }
   nextDate(){
     this.SaveUserChoiseDate++;
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, (this.yDate.getDate() + this.SaveUserChoiseDate));
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
     this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
@@ -117,6 +120,8 @@ export class ChitatComponent implements OnInit {
   }
   PreviusDate(){
     this.SaveUserChoiseDate--;
+    this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, (this.yDate.getDate() + this.SaveUserChoiseDate));
+    console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
     this.callObservable = this.ReqSer.getNotTodayLessons(this.SaveUserChoiseDate).subscribe(data => {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
