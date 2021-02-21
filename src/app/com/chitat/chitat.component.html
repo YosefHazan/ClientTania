@@ -17,9 +17,12 @@
             <i style="font-size:24px" class="fa">&#xf0da;</i>
         </div>
     </div>
-    <div *ngFor="let lesson1 of AllLessons; let i = index;" class="row">
+    
+    <div *ngFor="let lesson1 of AllLessons; let i = index;first as isFirst" class="row">
         <div class="lesson" [id]="'id'+i" (click) = "toggleDisplay(lesson1, 'id'+i)">
-            <div class='yylabel'><h3>{{lesson1['sug']}}</h3></div>
+            <div *ngIf="lesson1['sug'] != null">
+                <div class='yylabel'><h3>{{lesson1['sug']}}</h3></div>
+            </div>
             <div class='yyAud'><app-audio-comps [srcAudio]=getSrcAudio></app-audio-comps></div>
         </div>
     </div>

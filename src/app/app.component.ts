@@ -7,12 +7,29 @@ import { Component, Input, Output, ElementRef, ViewChild} from '@angular/core';
 })
 export class AppComponent {
   @ViewChild("popCom") elmToDown: ElementRef;
+  public pixelsToDown:string;
   public yyRouterbuyBooks:boolean = false;
   public yyRouterbuyLectures:boolean = false;
   public yyTypeLessonsActived:string = "chitat";
-  constructor(){}
+  constructor(){
+  }
   ngOnInit(){
-    this.fixCssForSells();
+    //fix position of sells description
+    if(screen.width <= 600 && this.yyTypeLessonsActived.includes("chitat"))
+    {
+      this.pixelsToDown = "378px";
+    }
+    else if(screen.width <= 600 && this.yyTypeLessonsActived.includes("midrasha"))
+    {
+      this.pixelsToDown = "598px";
+    }
+    try{
+      this.elmToDown.nativeElement.style.marginTop = this.pixelsToDown;
+    }
+    catch(e){
+      console.log("yoseftryfixcss");
+    }
+    //this.fixCssForSells();
   }
   yyChitatComponent()
   {
@@ -55,19 +72,6 @@ export class AppComponent {
   }
   fixCssForSells()
   {
-    let pixelsToDown;
-    let elmToHide;
-    eval("document.querySelector('#descriptionArea').style.display = 'none'");
-    
-    //fix position of sells description
-    if(screen.width <= 600 && this.yyTypeLessonsActived.includes("chitat"))
-    {
-      pixelsToDown = "378px";
-    }
-    else if(screen.width <= 600 && this.yyTypeLessonsActived.includes("midrasha"))
-    {
-      pixelsToDown = "598px";
-    }
-    this.elmToDown.nativeElement.style.marginTop = pixelsToDown;
+    eval("document.querySelector('#descriptionArea').style.display = 'none'");    
   }
 }

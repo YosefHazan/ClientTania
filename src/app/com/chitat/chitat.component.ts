@@ -18,9 +18,10 @@ export class ChitatComponent implements OnInit {
   public SaveUserChoiseDate:number = 0;
   public currentHebrewDate:fullHebrewDate;
   public yDate:any = new Date();
-  constructor(private ReqSer: CallToChitatService, private Hdate:HebrewDateService) { }
-
-  ngOnInit() {    
+  
+  constructor(private ReqSer: CallToChitatService, private Hdate:HebrewDateService) { 
+    this.yyOneLesson = {"sug":""};
+    
     console.log("ngOnInit comp - chitat");
     this.currentHebrewDate = this.Hdate.module(this.yDate.getFullYear(), this.yDate.getMonth() + 1, this.yDate.getDate());
     console.log("currentHebrewDate : " + this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter);
@@ -28,7 +29,6 @@ export class ChitatComponent implements OnInit {
       this.AllLessons = data;
       this.yyOneLesson = data[0];
       this.getSrcAudio = this.yyOneLesson['fullUrl'];
-
       this.AllLessons.forEach(elm => {
         switch (elm['sug']) {
           case 't':
@@ -54,8 +54,12 @@ export class ChitatComponent implements OnInit {
             elm['sug'] =" ";
             break;
         }
-      });
     });
+  });
+  }
+
+  ngOnInit() { 
+    console.log("ngOnInit");
   }
   ngOnDestroy() {
     this.callObservable.unsubscribe();
