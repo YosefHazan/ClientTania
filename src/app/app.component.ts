@@ -50,13 +50,13 @@ export class AppComponent {
   fixCssForSells()
   {
     //fix position of sells description
-    if(window.screen.width <= 600 && window.location.href.includes("chitat"))
+    if(window.screen.width <= 600 && (window.location.href.includes("chitat") || window.location.href.includes("Home")))
     {
-      this.pixelsToDown = "380px";
+      this.pixelsToDown = "392px";
     }
     else if(window.screen.width <= 600 && window.location.href.includes("midrasha"))
     {
-      this.pixelsToDown = "600px";
+      this.pixelsToDown = "467px";
     }
     else{//pc screen
       this.pixelsToDown = "0px";

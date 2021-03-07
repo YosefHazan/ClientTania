@@ -5,8 +5,12 @@
     margin: 0% !important;
 }
 img{
-    width: 70px;
+    width: 40px;
 }
+.yy5MarginTop{
+    margin-top:5px;
+}
+
 #cotar-nav > a{
     text-decoration: none;
 }
@@ -25,23 +29,31 @@ img{
     #yyRout{
         background-color: #dadada !important;
     }
+    .yyPading16{
+        padding: 16px;
+    }
+    nav{
+        height: 72px;
+    }
+    #lessonPicture{
+        width: 46px;
+        margin-top: -7px;
+    }
 }
 @media screen and (max-width:600px){
     a{
         margin: 1px;
-        padding: 1px;
+        padding: 3px;
     }
     nav{
         margin: 0px;
         padding: 0px;
+        height: 57px;
     }
     img{
         width:35px;
         height:35px;
-        margin-top: 13px;
-    }
-    #lessonPicture, #LecturesImg{
-        margin-top:3px;
+        /*margin-top: 13px;*/
     }
     h5{
         font-size:15px;
@@ -57,8 +69,13 @@ img{
 /*try*/
 app-buy-books, app-buy-lectures{
     background-color: white;
+    height: 600px;
 }
 
 .yyAbselute{
     position: absolute;
+}
+.yy-dark-Blue{
+    background-color:#285ec1;
+    color: white;
 }
