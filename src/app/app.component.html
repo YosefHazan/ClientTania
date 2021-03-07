@@ -13,7 +13,7 @@
         <h5 class="w3-left">חתת<br>יומי</h5>
       </a>
       <a class="w3-bar-item w3-button testbtn" routerLink="midrasha" routerLinkActive="active" (click)="yyMidrashaComponent()">
-        <img src="//tanyayomi.com/yy/icons/tab_Lesson.png" />
+        <img id="lessonPicture" src="//tanyayomi.com/yy/icons/tab_Lesson.png" />
         <h5 class="w3-left">שיעורים</h5>
       </a>
       <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToBooks()"><!-- routerLink="/buyBooks" routerLinkActive="notactiv"-->
@@ -21,16 +21,16 @@
         <h5 class="w3-left">ספרים<br>מומלצים</h5>
       </a>
       <a class="w3-bar-item w3-button testbtn" (click)="ManualRouterToLectures()" ><!--routerLink="/buyLectures" routerLinkActive="active"-->
-        <img src="//tanyayomi.com/yy/icons/tab_Lectures.png" />
+        <img id="LecturesImg" src="//tanyayomi.com/yy/icons/tab_Lectures.png" />
         <h5 class="w3-left">הרצאות</h5>
       </a>
     </nav>
   </div>
   <div class="yyLeftDirection">
     <div class="w3-twothird yyAbselute">
-      <div class="yyRightDirection" #popCom>
-        <app-buy-books *ngIf="this.yyRouterbuyBooks" class="w3-panel w3-left"></app-buy-books>
-        <app-buy-lectures *ngIf="this.yyRouterbuyLectures" class="w3-panel w3-left"></app-buy-lectures>
+      <div class="yyRightDirection" #popCom id="popCom">
+        <app-buy-books  *ngIf="this.yyRouterbuyBooks" class="w3-panel w3-left popCom"></app-buy-books>
+        <app-buy-lectures *ngIf="this.yyRouterbuyLectures" class="w3-panel w3-left popCom"></app-buy-lectures>
       </div>
     </div>
   </div>

@@ -40,12 +40,18 @@ img{
         height:35px;
         margin-top: 13px;
     }
+    #lessonPicture, #LecturesImg{
+        margin-top:3px;
+    }
     h5{
         font-size:15px;
     }
     #cotar-nav{
         display: none;
     }
+    /*.popCom{
+        margin-top:396px;
+    }*/
 }
 
 /*try*/

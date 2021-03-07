@@ -1,4 +1,4 @@
-import { Component, Input, Output, ElementRef, ViewChild} from '@angular/core';
+import { Component, Input, Output, ElementRef, ViewChild, OnInit, Directive} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,40 +6,20 @@ import { Component, Input, Output, ElementRef, ViewChild} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild("popCom") elmToDown: ElementRef;
+  //@ViewChild("popCom") eleToDown: ElementRef;
   public pixelsToDown:string;
   public yyRouterbuyBooks:boolean = false;
   public yyRouterbuyLectures:boolean = false;
-  public yyTypeLessonsActived:string = "chitat";
-  constructor(){
-  }
-  ngOnInit(){
-    //fix position of sells description
-    if(screen.width <= 600 && this.yyTypeLessonsActived.includes("chitat"))
-    {
-      this.pixelsToDown = "378px";
-    }
-    else if(screen.width <= 600 && this.yyTypeLessonsActived.includes("midrasha"))
-    {
-      this.pixelsToDown = "598px";
-    }
-    try{
-      this.elmToDown.nativeElement.style.marginTop = this.pixelsToDown;
-    }
-    catch(e){
-      console.log("yoseftryfixcss");
-    }
-    //this.fixCssForSells();
-  }
+  
+  constructor(){}
+  ngOnInit(){}
   yyChitatComponent()
   {
     this.TurenOffLectureOrBook();
-    this.yyTypeLessonsActived = 'chitat';
   }
   yyMidrashaComponent()
   {
     this.TurenOffLectureOrBook();
-    this.yyTypeLessonsActived = 'midrasha';
   }
   ManualRouterToBooks()
   {
@@ -58,20 +38,31 @@ export class AppComponent {
   }
   TurenOffLectureOrBook()
   {
-    var elmToHide;
     var elmToDown;
-
-    console.log("turn off");
     this.yyRouterbuyBooks = false;
     this.yyRouterbuyLectures = false;
     eval("document.querySelector('#descriptionArea').style.display = 'block'");
   
     //fix position of sells description
-    elmToDown = document.querySelector('.yyRightDirection');
+    elmToDown = document.querySelector('#popCom');
     elmToDown.style.marginTop = "0px";
   }
   fixCssForSells()
   {
+    //fix position of sells description
+    if(window.screen.width <= 600 && window.location.href.includes("chitat"))
+    {
+      this.pixelsToDown = "380px";
+    }
+    else if(window.screen.width <= 600 && window.location.href.includes("midrasha"))
+    {
+      this.pixelsToDown = "600px";
+    }
+    else{//pc screen
+      this.pixelsToDown = "0px";
+    }
+    eval("document.querySelector('#popCom').style.marginTop ='" + this.pixelsToDown + "';");
     eval("document.querySelector('#descriptionArea').style.display = 'none'");    
   }
+
 }
