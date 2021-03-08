@@ -41,9 +41,9 @@ button{
 }
 #row-whatsapp{
     background-color:#01e675;
-    height: 35px !important;
     padding-top:5px;
     padding-right:5px;
+    padding-bottom:5px;
 }
 .row.activRow app-audio-comps{
     display: inline-block;
