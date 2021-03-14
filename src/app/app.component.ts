@@ -52,11 +52,11 @@ export class AppComponent {
     //fix position of sells description
     if(window.screen.width <= 600 && (window.location.href.includes("chitat") || window.location.href.includes("Home")))
     {
-      this.pixelsToDown = "392px";
+      this.pixelsToDown = "440px";
     }
     else if(window.screen.width <= 600 && window.location.href.includes("midrasha"))
     {
-      this.pixelsToDown = "467px";
+      this.pixelsToDown = "520px";
     }
     else{//pc screen
       this.pixelsToDown = "0px";
