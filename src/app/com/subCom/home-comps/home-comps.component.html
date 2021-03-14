@@ -1,6 +1,6 @@
 <!--chitat -->
 <div class="w3-third w3-right"><!--TODO:COMPONNET-->
-    <div id="row-whatsapp" class="w3-center">
+    <div id="row-whatsapp" class="w3-center lesson">
         <h3>
             <a class="w3-center fa" id="linkWhatapp"  href="https://chat.whatsapp.com/I29iEy4gsT9FeUkYL9HF3A">
                 &#xf232;
@@ -8,18 +8,21 @@
             </a>
         </h3>  
     </div>
-    <div class="date w3-row"><!--TODO:COMPONNET-->
-        <div class="w3-third w3-cell w3-left" id="leftArrow" (click)="nextDate();">
-            <i style="font-size:24px" class="fa">&#xf0d9;</i>
-        </div>
-        <div class="w3-cell w3-center w3-third" id="HebrewDate" style="padding-top: 5px;">
-            <p id="showDate"> {{this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter}}</p>
-            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-        </div>
-        <div class="w3-third w3-cell w3-right" id="rightArrow" (click)="PreviusDate();">
-            <i style="font-size:24px" class="fa">&#xf0da;</i>
-        </div>
+    <div class="date w3-row lesson"><!--TODO:COMPONNET-->
+        <h3>
+            <div class="w3-third w3-cell w3-left" id="leftArrow" (click)="nextDate();">
+                <i style="font-size:24px" class="fa">&#xf0d9;</i>
+            </div>
+            <div class="w3-cell w3-center w3-third" id="HebrewDate" style="padding-top: 5px;">
+                <p id="showDate"> {{this.currentHebrewDate.day_in_month_hebrew_letter + " " +this.currentHebrewDate.month_name_hebrew_letter + " " + this.currentHebrewDate.year_hebrew_letter}}</p>
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            </div>
+            <div class="w3-third w3-cell w3-right" id="rightArrow" (click)="PreviusDate();">
+                <i style="font-size:24px" class="fa">&#xf0da;</i>
+            </div>
+        </h3>
     </div>
+
     <div *ngFor="let lesson1 of AllLessons; let i = index;" class="row">
         <div class="lesson" [id]="'id'+i" (click) = "toggleDisplay(lesson1, 'id'+i)">
             <div class='yylabel'><h3>{{lesson1['sug']}}</h3></div>
@@ -32,7 +35,7 @@
     <!--    books     -->
     <div class="w3-third w3-right">
         <div>
-            <div class="w3-row">
+            <div class="w3-row" style="padding-right: 10px;">
                 <h2>ספרים מומלצים</h2> 
             </div>
             <div class="w3-row-padding">

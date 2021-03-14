@@ -8,14 +8,18 @@
     </div>
   </div> -->
   <div id="theList" class="w3-third w3-right">
-    <h2>רשימת השיעורים המלאה</h2>
-    <h3 style="background-color:#25D366" >
-      לקבלת שיעורים חדשים לווצאפ
-      <a href="https://chat.whatsapp.com/FZjM4iESdL71p7uctLrN3M">לחצו כאן</a>
-    </h3>
+    <h2 class="lesson">רשימת השיעורים המלאה</h2>
+    <div id="row-whatsapp" class="w3-center lesson">
+      <h3>
+          <a class="w3-center fa" id="linkWhatapp"  href="https://chat.whatsapp.com/FZjM4iESdL71p7uctLrN3M">
+              &#xf232;
+              לחצו לקבלת שיעורים חדשים לווצאפ
+          </a>
+      </h3>  
+  </div>
        <!--span style='font-size:100px;'>&#128488;</span-->
     
-      <div class="row"  
+      <div class="row lesson"  
         *ngFor='let category of TablesName; let ii = index' >
         <label (click)="yyCalToMidrashaByTable(('id'+ ii), category['Url'])" [id]="'id'+ ii">
             <h3>{{category['Name']}}</h3>

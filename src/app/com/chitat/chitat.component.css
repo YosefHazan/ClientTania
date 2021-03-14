@@ -17,9 +17,7 @@ p{
 button{
     display: inline;
 }
-.activRow{
-    background-color:#00FFFF;
-}
+
 .row h3{
     padding-top: 8px;
     margin-block-start: 0em;
@@ -37,23 +35,12 @@ button{
     direction:ltr;
 }
 */
-#linkWhatapp{
-    text-decoration: none;
-}
-#row-whatsapp{
-    background-color:#01e675;
-    padding-top:5px;
-    padding-right:5px;
-    padding-bottom:5px;
-}
+
 .row.activRow app-audio-comps{
     display: inline-block;
 }
 .row app-audio-comps{
     display:none;
-}
-.lesson{
-    height: 54px;
 }
 .lesson > div{
     display: inline-block;

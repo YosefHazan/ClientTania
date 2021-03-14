@@ -279,4 +279,23 @@ div.cat:active {
 .popCom{
     margin-top: 0px;
 }
+
+#linkWhatapp{
+    text-decoration: none;
+}
+#row-whatsapp{
+    background-color:#01e675;
+    padding-top:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+    color: white;
+}
+.lesson{
+    height: 54px;
+}
+.activRow{
+    background-color:#00FFFF;
+}
+
 /*TODO:  @font-face { font-family: JuneBug; src: url('JUNEBUG.TTF'); }*/
+
