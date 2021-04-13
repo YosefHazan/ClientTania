@@ -14,6 +14,7 @@ import { ChitatComponent } from './com/chitat/chitat.component';
 import { MidrashaComponent } from './com/midrasha/midrasha.component';
 import { SreachCompsComponent } from './com/subCom/sreach-comps/sreach-comps.component';
 import { HomeCompsComponent } from './com/subCom/home-comps/home-comps.component';
+import { ExampleMidrashaComponent } from './com/example-midrasha/example-midrasha.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeCompsComponent } from './com/subCom/home-comps/home-comps.component
     ChitatComponent,
     MidrashaComponent,
     SreachCompsComponent,
-    HomeCompsComponent
+    HomeCompsComponent,
+    ExampleMidrashaComponent
   ],
   imports: [
     RouterModule,

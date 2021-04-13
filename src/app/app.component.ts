@@ -41,7 +41,13 @@ export class AppComponent {
     var elmToDown;
     this.yyRouterbuyBooks = false;
     this.yyRouterbuyLectures = false;
-    eval("document.querySelector('#descriptionArea').style.display = 'block'");
+    eval(""
+    + "var yytry = document.querySelector('#descriptionArea');"
+    + "if(yytry != undefined && yytry != null){"
+    + "yytry.style.display = 'block';"
+    + "}else{"
+    + "console.log('failed');"
+    + "}");
   
     //fix position of sells description
     elmToDown = document.querySelector('#popCom');

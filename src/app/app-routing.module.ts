@@ -5,11 +5,12 @@ import { BuyLecturesComponent }   from './com/buy-lectures/buy-lectures.componen
 import { ChitatComponent }        from './com/chitat/chitat.component';
 import { MidrashaComponent }      from './com/midrasha/midrasha.component';
 import { HomeCompsComponent }     from './com/subCom/home-comps/home-comps.component';
+import { ExampleMidrashaComponent } from './com/example-midrasha/example-midrasha.component';
 
 const routes: Routes = [
   { path: "",                pathMatch: "full", redirectTo: "Home"},
   { path: "chitat",          component: ChitatComponent },
-  { path: "midrasha",        component: MidrashaComponent },
+  { path: "midrasha",        component: ExampleMidrashaComponent},//TODO:MidrashaComponent
   { path: "Home",            component: HomeCompsComponent }
   /*{ path: "buyLectures",     component:BuyLecturesComponent},
   { path: "buyBooks" ,       component:BuyBooksComponent}*/

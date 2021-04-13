@@ -22,8 +22,11 @@ th, td{
 }
 table{width:100%;}
 @media screen and (min-width:600px){
-    .w3-third{
+    /*.w3-third{
         background-color: #dadada;
+    }*/
+    #descriptionArea{
+        background-color: white;
     }
 }
 tr{
@@ -31,7 +34,25 @@ tr{
     border-bottom-style: solid;
     border-bottom-color:black;
 }
-
 #row-whatsapp h3{
     margin: -2px 0 0 0;
 }
+#tableParasha{
+    direction: rtl;
+    text-align: right;
+    padding: 4px;
+    padding-right: 5px;
+}
+#tableParasha div{
+    float: right;
+}
+.w3-col.m2.w3-center{
+    margin:0 1%;
+}
+div.w3-row{
+    width: 100%;
+}
+/*#wrap-app-sreach-comps{
+    width: 100%;
+    border-bottom: gray 1px solid;
+}*/

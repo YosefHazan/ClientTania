@@ -9,7 +9,13 @@ import {formatDate} from '@angular/common';
 })
 export class CallToChitatService {
   private yyMyHost: string =  "https://tanyayomi.com/"; // "//localhost/yy/day=2020-09-29.js"
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    if(window.location.host == "localhost:4200" && !window.navigator.onLine)
+    { 
+      console.log("האינטרנט כבוי");
+      this.yyMyHost = "http://localhost/";
+    }
+  }
 
   public getTodayLessons():Observable<any> 
   {
