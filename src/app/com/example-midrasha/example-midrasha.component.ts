@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit, ElementRef } from '@angular/core';
 import { CallToMidrashaService } from '../../services/call-to-midrasha.service';
 import { minLessons } from '../../classes/minLessons';
 import { GetAllCategoryLessonService } from '../../services/get-all-category-lesson.service';
@@ -24,8 +24,9 @@ export class ExampleMidrashaComponent implements OnInit {
   
   renderer: any;
   
-  constructor(private lessonsService: CallToMidrashaService,
-              private tableService: GetAllCategoryLessonService) {}
+  constructor(private lessonsService: CallToMidrashaService
+              ,private tableService: GetAllCategoryLessonService
+              ,private yytHtmlElm:ElementRef) {}
   /*
   ngAfterViewInit() {
     const d2 = this.renderer.createElement('div');
@@ -33,7 +34,15 @@ export class ExampleMidrashaComponent implements OnInit {
     this.renderer.appendChild(d2, text);
     this.renderer.appendChild(this.d1.nativeElement, d2);
   }*/
-
+  
+  /*TODO:https://stackoverflow.com/questions/41609937/how-to-bind-event-listener-for-rendered-elements-in-angular-2*/
+  playMidrasha(){
+    console.log("playMidrasha");
+    //this.elRef.nativeElement.querySelector('div');
+    let chtchTableParasha = this.renderer.selectRootElement("#playMidrasha");
+    console.log(chtchTableParasha.length);
+  }
+  
   ngOnInit()
   {
     let elm;
