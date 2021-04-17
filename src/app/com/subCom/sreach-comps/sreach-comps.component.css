@@ -1,19 +1,16 @@
-.input-icons i { 
-    /*position: absolute; */
-} 
-  
 .input-icons { 
-    width: 100%;
+    width: 98%;
     direction: ltr;
     text-align: right;
     padding: 10px;
-} 
-  
+    margin-top: 3px;
+    border:black 1px solid;
+    border-radius: 25px;
+}
 .icon { 
     padding: 10px; 
     min-width: 40px; 
 } 
-  
 .input-field { 
     width: 100%; 
     padding: 10px; 
@@ -21,11 +18,17 @@
     text-align:right;
 } 
 input{
+    border:0;
     width: 80%;
     direction: rtl;
     text-align: right;
 }
 button{
+    background-color: transparent;
+    border: 0;
     width: 20%;
     height: 28px;
+}
+button:focus, input:focus{
+    outline: none;
 }
