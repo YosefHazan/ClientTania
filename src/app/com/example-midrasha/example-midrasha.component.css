@@ -1,3 +1,18 @@
+@font-face { font-family: Shlomo; src: url('https://tanyayomi.com/yy/font/Shlomo.ttf'); }
+@font-face { font-family: ShlomoBold; src: url('https://tanyayomi.com/yy/font/ShlomoBold.ttf'); }
+@font-face { font-family: ShlomoLightBold; src: url('https://tanyayomi.com/yy/font/ShlomoLightBold.ttf'); }
+h1, h2, h3, h4, h5, h6 ,#descriptionArea{
+    font-family: Shlomo !important;
+}
+h4{
+    text-align: right;
+    font-weight: bold;
+}
+ h6{
+    display: inline-block;
+    margin: 2px 1px 1px 5px;
+}
+
 #lesson{
     background-color: white !important;/*TODO: is need important*/
     margin: 0px auto;
@@ -56,3 +71,83 @@ div.w3-row{
     width: 100%;
     border-bottom: gray 1px solid;
 }*/
+
+#descriptionLesson{
+    display:none;
+}
+/*from chitat component*/
+
+p{
+    display: inline;
+    font-size: 18px;
+}
+button{
+    display: inline;
+}
+.row h3{
+    padding-top: 8px;
+    margin-block-start: 0em;
+}
+#DetailsArea{
+    background-color:white !important;/*TODO: is need important?*/
+    margin: 0px;
+    padding: 0px;
+}
+#descriptionArea p{
+    white-space: pre-wrap;
+}
+.row.activRow app-audio-comps{
+    display: inline-block;
+}
+.row app-audio-comps{
+    display:none;
+}
+.lesson > div, .yy1Label, .yyAud{
+    display: inline-block;
+}
+.yylabel{
+    float: right;
+}
+.yyAud{
+    float: left;
+    margin-top:11px;
+}
+audio{
+    display:none;
+}
+@media screen and (min-width:601px) and (max-width:664px){
+    .row{
+        height: 80px;
+        padding-top:0px;
+    }
+    .row h3{
+        padding-top: 0px;
+    }
+    .row.activRow{
+        height: 110px;
+        padding-bottom: -18px;
+    }
+    .yyAud{
+        margin-top:-11px;
+    }
+}
+@media screen and (min-width:665px) and (max-width:1040px){
+    .row{
+        height: 46px;
+        padding-top:0px;
+    }
+    .row h3{
+        padding-top: 0px;
+    }
+    .row.activRow{
+        height: 80px;
+        padding-bottom: 2px;
+    }
+    .yyAud{
+        margin-top:5px;
+    }
+}
+h3{
+    padding-top: 8px;
+    margin-block-start: 0em;
+}

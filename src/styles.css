@@ -236,7 +236,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 body{
     text-align:right;
     direction: rtl;
-    background-color: #dadada;
 }
 .yyMinHeight860px{
     min-height: 860px;
@@ -297,7 +296,6 @@ div.cat:active {
     display: inline-block;
     width:80%;
 }
-
 #linkWhatapp{
     text-decoration: none;
 }
@@ -309,10 +307,15 @@ div.cat:active {
     color: white;
 }
 
-/*TODO:  @font-face { font-family: JuneBug; src: url('JUNEBUG.TTF'); }*/
+
 
 @media screen and (max-width:600px){
     .popCom {
         margin-top: 12px;
+    }
+}
+@media screen and (min-width:601px){
+    body {
+        background-color: #dadada;
     }
 }
