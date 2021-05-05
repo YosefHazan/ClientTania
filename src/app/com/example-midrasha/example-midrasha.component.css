@@ -1,9 +1,9 @@
-@font-face { font-family: Shlomo; src: url('https://tanyayomi.com/yy/font/Shlomo.ttf'); }
+/*@font-face { font-family: Shlomo; src: url('https://tanyayomi.com/yy/font/Shlomo.ttf'); }
 @font-face { font-family: ShlomoBold; src: url('https://tanyayomi.com/yy/font/ShlomoBold.ttf'); }
 @font-face { font-family: ShlomoLightBold; src: url('https://tanyayomi.com/yy/font/ShlomoLightBold.ttf'); }
 h1, h2, h3, h4, h5, h6 ,#descriptionArea{
     font-family: Shlomo !important;
-}
+}*/
 h4{
     text-align: right;
     font-weight: bold;
@@ -36,14 +36,6 @@ th, td{
     text-align:right !important;
 }
 table{width:100%;}
-@media screen and (min-width:600px){
-    /*.w3-third{
-        background-color: #dadada;
-    }*/
-    #descriptionArea{
-        background-color: white;
-    }
-}
 tr{
     border-bottom-width:1px;
     border-bottom-style: solid;
@@ -57,9 +49,6 @@ tr{
     text-align: right;
     padding: 4px;
     padding-right: 5px;
-}
-#tableParasha div{
-    float: right;
 }
 .w3-col.m2.w3-center{
     margin:0 1%;
@@ -115,6 +104,9 @@ button{
 audio{
     display:none;
 }
+#tableParasha div{
+    float: right;
+}
 @media screen and (min-width:601px) and (max-width:664px){
     .row{
         height: 80px;
@@ -129,6 +121,27 @@ audio{
     }
     .yyAud{
         margin-top:-11px;
+    }
+}
+@media screen and (min-width:600px){
+    #tableParasha > div > div{
+        float: left;
+    }
+    /*#tableParasha div{
+        float: none;
+    }
+    #tableParasha div div{
+        float: right;
+    }*/
+    /*.w3-third{
+        background-color: #dadada;
+    }*/
+    h6{
+        display: block;
+    }
+    #descriptionArea{
+        min-height: 800px;
+        background-color: white;
     }
 }
 @media screen and (min-width:665px) and (max-width:1040px){
