@@ -10,7 +10,7 @@ import { ExampleMidrashaComponent } from './com/example-midrasha/example-midrash
 const routes: Routes = [
   { path: "",                pathMatch: "full", redirectTo: "Home"},
   { path: "chitat",          component: ChitatComponent },
-  { path: "midrasha",        component: ExampleMidrashaComponent},//TODO:MidrashaComponent
+  { path: "midrasha",        component: MidrashaComponent},//TODO:ExampleMidrashaComponent
   { path: "Home",            component: HomeCompsComponent }
   /*{ path: "buyLectures",     component:BuyLecturesComponent},
   { path: "buyBooks" ,       component:BuyBooksComponent}*/
